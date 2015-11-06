@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-export default class Container extends Component {
+class Container extends Component {
 
   render () {
     return (
@@ -15,3 +15,5 @@ export default class Container extends Component {
     )
   }
 }
+
+export default Container
