@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "zavatta",
+    "zavatta-react"
+  ],
+  "rules": {
+    "react/jsx-max-props-per-line": [2, { maximum: 3 }],
+    "semi": [2, "never"],
+    "strict": [2, "never"],
+    "no-console": [0]
+  },
+  "globals": {
+  }
+}
