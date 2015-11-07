@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 import { increment } from '../actions/counter'
@@ -11,13 +10,13 @@ import { increment } from '../actions/counter'
 )
 class Todo extends Component {
 
-  handleIncrement (e) {
+  handleIncrement () {
     const { dispatch } = this.props
     dispatch(increment())
   }
 
   render () {
-    const { counter, increment, decrement } = this.props
+    const { counter } = this.props
     return (
       <div>
         <button onClick={::this.handleIncrement}>{'increment'}</button>

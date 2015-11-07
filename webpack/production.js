@@ -1,9 +1,9 @@
-var path = require('path');
-var webpack = require('webpack');
-var StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+import path from 'path'
+import webpack from 'webpack'
+import { StatsWriterPlugin } from 'webpack-stats-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
-module.exports = {
+export default {
 
   entry: [
     './src/client'
@@ -29,8 +29,7 @@ module.exports = {
 
   plugins: [
 
-    new ExtractTextPlugin('styles-[hash].css'),
-
+    // env variables
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
@@ -38,19 +37,37 @@ module.exports = {
       }
     }),
 
+    // extract styles
+    new ExtractTextPlugin('styles-[hash].css'),
+
+    // optimizations
+    /*
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
-
+*/
+    // write stats
     new StatsWriterPlugin({
-      transform: function (data) {
-        return JSON.stringify({
-          main: data.assetsByChunkName.main[0],
-          style: data.assetsByChunkName.main[1]
-        })
-      }
+      transform: data => JSON.stringify({
+        main: data.assetsByChunkName.main[0],
+        style: data.assetsByChunkName.main[1]
+      })
     })
 
-  ]
+  ],
 
-};
+  progress: true,
+
+  stats: {
+    colors: true,
+    reasons: false,
+    hash: false,
+    version: false,
+    timings: true,
+    chunks: false,
+    chunkModules: false,
+    cached: false,
+    cachedAssets: false
+  }
+
+}
