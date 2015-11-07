@@ -2,7 +2,7 @@ import path from 'path'
 import express from 'express'
 import compression from 'compression'
 
-import config from './config'
+import config from '../config'
 
 const server = express()
 
