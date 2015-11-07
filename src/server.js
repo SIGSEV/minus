@@ -7,7 +7,7 @@ import config from './config'
 const server = express()
 
 if (config.env === 'development') {
-  require('./dev-server')(server)
+  require('./utils/dev-server')(server)
 }
 
 if (config.env === 'production') {
