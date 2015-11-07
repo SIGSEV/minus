@@ -35,6 +35,10 @@ module.exports = {
           }
         }
       }
+    }, {
+      test: /\.scss$/,
+      loaders: ['style', 'css', 'sass'],
+      exclude: /node_modules/
     }]
   },
 
@@ -43,7 +47,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development')
+        NODE_ENV: JSON.stringify('development'),
+        BROWSER: JSON.stringify(true)
       }
     })
   ],

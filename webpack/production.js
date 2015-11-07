@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
@@ -19,14 +20,21 @@ module.exports = {
       test: /\.js$/,
       loaders: ['babel'],
       exclude: /node_modules/
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass'),
+      exclude: /node_modules/
     }]
   },
 
   plugins: [
 
+    new ExtractTextPlugin('styles-[hash].css'),
+
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        NODE_ENV: JSON.stringify('production'),
+        BROWSER: JSON.stringify(true)
       }
     }),
 
@@ -36,9 +44,9 @@ module.exports = {
 
     new StatsWriterPlugin({
       transform: function (data) {
-        console.log(data.assetsByChunkName.main);
         return JSON.stringify({
-          main: data.assetsByChunkName.main
+          main: data.assetsByChunkName.main[0],
+          style: data.assetsByChunkName.main[1]
         })
       }
     })

@@ -5,13 +5,9 @@ import { RoutingContext, match } from 'react-router'
 import { renderToString } from 'react-dom/server'
 import { createStore } from 'redux'
 
-import config from '../config'
 import routes from '../routes'
 import reducer from '../reducers'
-
-const mainScript = (config.env === 'production')
-  ? require('../dist/stats.json').main
-  : 'bundle.js'
+import { main, style } from '../dist/stats.json'
 
 export default (req, res) => {
 
@@ -42,6 +38,8 @@ export default (req, res) => {
 
           <title>App</title>
 
+          <link href='dist/${style}' rel='stylesheet'/>
+
           <script>
             window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
           </script>
@@ -49,7 +47,7 @@ export default (req, res) => {
         </head>
         <body>
           <div id='root'>${rootHtml}</div>
-          <script src='dist/${mainScript}'></script>
+          <script src='dist/${main}'></script>
         </body>
       </html>
     `
