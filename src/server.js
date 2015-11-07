@@ -3,7 +3,6 @@ import express from 'express'
 import compression from 'compression'
 
 import config from './config'
-import render from './middlewares/render'
 
 const server = express()
 
@@ -12,6 +11,8 @@ if (config.env === 'development') {
 }
 
 if (config.env === 'production') {
+  const render = require('./middlewares/render')
+
   server.use(compression())
   server.use('/dist', express.static(path.join(__dirname, '/dist')))
   server.use(render)
