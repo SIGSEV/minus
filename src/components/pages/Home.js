@@ -8,7 +8,7 @@ import * as counterActions from '../../actions/counter'
   state => ({
     counter: state.counter
   }),
-  (dispatch) => bindActionCreators(counterActions, dispatch)
+  dispatch => bindActionCreators(counterActions, dispatch)
 )
 class Todo extends Component {
 

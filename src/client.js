@@ -9,43 +9,27 @@ import config from './config'
 import reducer from './reducers'
 import routes from './routes'
 
-let store, DevTools, DebugPanel, LogMonitor
+const history = createBrowserHistory()
 
 const initialState = (config.env === 'development')
   ? {}
   : window.__INITIAL_STATE__
 
-const history = createBrowserHistory()
+const devTools = (config.devtools)
+  ? require('./utils/dev-tools')
+  : null
 
-if (config.env === 'development') {
-  const { compose } = require('redux')
-  const { devTools, persistState } = require('redux-devtools')
-  DevTools = require('redux-devtools/lib/react').DevTools
-  DebugPanel = require('redux-devtools/lib/react').DebugPanel
-  LogMonitor = require('redux-devtools/lib/react').LogMonitor
+const store = (config.devtools)
+  ? devTools.devStore(reducer, initialState)
+  : createStore(reducer, initialState)
 
-  const finalStore = compose(
-    devTools(),
-    persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
-  )(createStore)
-
-  store = finalStore(reducer, initialState)
-} else {
-  store = createStore(reducer, initialState)
-}
-
+console.log(store)
 const rootComponent = (
   <div>
     <Provider store={store}>
       <Router children={routes} history={history} />
     </Provider>
-    {config.env === 'development' && (
-      <DebugPanel top right bottom>
-        <DevTools store={store}
-          monitor={LogMonitor}
-          visibleOnLoad />
-      </DebugPanel>
-    )}
+    {config.devtools && <devTools.DevComponent store={store} />}
   </div>
 )
 
