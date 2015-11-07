@@ -10,7 +10,11 @@ import reducer from './reducers'
 import routes from './routes'
 
 let store, DevTools, DebugPanel, LogMonitor
-const initialState = {}
+
+const initialState = (config.env === 'development')
+  ? {}
+  : window.__INITIAL_STATE__
+
 const history = createBrowserHistory()
 
 if (config.env === 'development') {

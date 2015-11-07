@@ -1,11 +1,11 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route, IndexRoute } from 'react-router'
 
 import { App } from './components'
-import { Todo } from './components/pages'
+import { Home } from './components/pages'
 
 export default (
   <Route path='/' component={App}>
-    <Route path='/todo' component={Todo} />
+    <IndexRoute component={Home} />
   </Route>
 )

@@ -1,1 +1,1 @@
-export Todo from './Todo'
+export Home from './Home'

@@ -10,9 +10,14 @@
   outline: none;
 }
 
-button, a { cursor: pointer }
-
 body {
   font-size: 16px;
+  line-height: 24px;
   font-family: monospace;
+}
+
+button, a { cursor: pointer }
+
+button {
+  background: lightgray
 }
