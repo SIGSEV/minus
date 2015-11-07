@@ -7,4 +7,12 @@
   padding: 0;
   border: none;
   background-color: transparent;
+  outline: none;
+}
+
+button, a { cursor: pointer }
+
+body {
+  font-size: 16px;
+  font-family: monospace;
 }
