@@ -9,11 +9,12 @@ import config from './config'
 import reducer from './reducers'
 import routes from './routes'
 
+
 const history = createBrowserHistory()
 
-const initialState = (config.env === 'development')
-  ? {}
-  : window.__INITIAL_STATE__
+const initialState = (config.env === 'production')
+  ? window.__INITIAL_STATE__
+  : {}
 
 const devTools = (config.devtools)
   ? require('./utils/dev-tools')
@@ -23,7 +24,6 @@ const store = (config.devtools)
   ? devTools.devStore(reducer, initialState)
   : createStore(reducer, initialState)
 
-console.log(store)
 const rootComponent = (
   <div>
     <Provider store={store}>
