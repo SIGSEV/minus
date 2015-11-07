@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
 import { App } from './components'
-import { Home } from './components/pages'
+import { Home } from './pages'
 
 export default (
   <Route path='/' component={App}>

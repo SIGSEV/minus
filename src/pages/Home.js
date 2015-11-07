@@ -1,24 +1,26 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
+import { dispatch } from 'redux'
 import { connect } from 'react-redux'
 
-import * as counterActions from '../../actions/counter'
+import { increment } from '../actions/counter'
 
 @connect(
   state => ({
     counter: state.counter
-  }),
-  dispatch => bindActionCreators(counterActions, dispatch)
+  })
 )
 class Todo extends Component {
+
+  handleIncrement (e) {
+    const { dispatch } = this.props
+    dispatch(increment())
+  }
 
   render () {
     const { counter, increment, decrement } = this.props
     return (
       <div>
-        <button onClick={decrement}>{'decrement'}</button>
-        {' - '}
-        <button onClick={increment}>{'increment'}</button>
+        <button onClick={::this.handleIncrement}>{'increment'}</button>
         {' : '}
         {counter}
       </div>
