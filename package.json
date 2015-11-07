@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "build": "npm run clean && npm run build:webpack",
-    "build:webpack": "NODE_ENV=production webpack --config webpack/production.js --progress",
+    "build:webpack": "NODE_ENV=production babel-node bin/build",
     "clean": "rimraf dist",
     "preview": "npm run build && npm run prod",
     "prod": "NODE_ENV=production node index.js",
     "start": "node index.js",
-    "lint": "eslint src config webpack"
+    "lint": "eslint src config webpack bin"
   },
   "dependencies": {
     "autoprefixer-loader": "^3.1.0",
