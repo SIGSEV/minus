@@ -17,7 +17,7 @@ const initialState = (config.env === 'production')
   : {}
 
 const devTools = (config.devtools)
-  ? require('./utils/dev-tools')
+  ? require('./dev/tools')
   : null
 
 const store = (config.devtools)

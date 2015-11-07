@@ -4,7 +4,7 @@
   "scripts": {
     "build": "npm run clean && npm run build:webpack",
     "build:webpack": "NODE_ENV=production webpack --config webpack/production.js --progress",
-    "clean": "rimraf src/dist",
+    "clean": "rimraf dist",
     "preview": "npm run build && npm run prod",
     "prod": "NODE_ENV=production node index.js",
     "start": "node index.js",

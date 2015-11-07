@@ -7,14 +7,14 @@ import config from './config'
 const server = express()
 
 if (config.env === 'development') {
-  require('./utils/dev-server')(server)
+  require('./dev/server')(server)
 }
 
 if (config.env === 'production') {
   const render = require('./middlewares/render')
 
   server.use(compression())
-  server.use('/dist', express.static(path.join(__dirname, '/dist')))
+  server.use('/dist', express.static(path.join(__dirname, '../dist')))
   server.use(render)
 }
 
