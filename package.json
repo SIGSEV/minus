@@ -8,7 +8,7 @@
     "preview": "npm run build && npm run prod",
     "prod": "NODE_ENV=production node index.js",
     "start": "node index.js",
-    "lint": "eslint src"
+    "lint": "eslint src config webpack"
   },
   "dependencies": {
     "autoprefixer-loader": "^3.1.0",
