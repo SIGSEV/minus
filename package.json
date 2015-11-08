@@ -8,6 +8,7 @@
     "preview": "npm run build && npm run prod",
     "prod": "NODE_ENV=production npm start",
     "start": "NODE_PATH=$NODE_PATH:./src babel-node src/server",
+    "debug": "DEVTOOLS=1 npm start",
     "lint": "eslint src webpack bin"
   },
   "dependencies": {
