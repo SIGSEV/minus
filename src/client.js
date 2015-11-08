@@ -9,7 +9,6 @@ import config from 'config'
 import reducer from 'reducers'
 import routes from 'routes'
 
-
 const history = createBrowserHistory()
 
 const initialState = (config.env === 'production')
