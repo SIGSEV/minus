@@ -2,16 +2,16 @@ import path from 'path'
 import express from 'express'
 import compression from 'compression'
 
-import config from '../config'
+import config from 'config'
 
 const server = express()
 
 if (config.env === 'development') {
-  require('./dev/server')(server)
+  require('dev/server')(server)
 }
 
 if (config.env === 'production') {
-  const render = require('./middlewares/render')
+  const render = require('middlewares/render')
 
   server.use(compression())
   server.use('/dist', express.static(path.join(__dirname, '../dist')))

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { increment } from '../actions/counter'
+import { increment } from 'actions/counter'
 
 @connect(
   state => ({

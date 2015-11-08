@@ -5,8 +5,8 @@ import { RoutingContext, match } from 'react-router'
 import { renderToString } from 'react-dom/server'
 import { createStore } from 'redux'
 
-import routes from '../routes'
-import reducer from '../reducers'
+import routes from 'routes'
+import reducer from 'reducers'
 import { main, style } from '../../dist/stats.json'
 
 export default (req, res) => {

@@ -3,6 +3,10 @@ import webpack from 'webpack'
 
 export default {
 
+  resolve: {
+    modulesDirectories: ['node_modules', 'src'],
+  },
+
   entry: [
     'webpack-hot-middleware/client',
     './src/client'

@@ -2,13 +2,13 @@
   "name": "minus",
   "version": "1.0.0",
   "scripts": {
+    "clean": "rimraf dist",
     "build": "npm run clean && npm run build:webpack",
     "build:webpack": "NODE_ENV=production babel-node bin/build",
-    "clean": "rimraf dist",
     "preview": "npm run build && npm run prod",
-    "prod": "NODE_ENV=production node index.js",
-    "start": "node index.js",
-    "lint": "eslint src config webpack bin"
+    "prod": "NODE_ENV=production npm start",
+    "start": "NODE_PATH=$NODE_PATH:./src babel-node src/server",
+    "lint": "eslint src webpack bin"
   },
   "dependencies": {
     "autoprefixer-loader": "^3.1.0",

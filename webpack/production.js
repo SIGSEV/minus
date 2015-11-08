@@ -5,6 +5,10 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 export default {
 
+  resolve: {
+    modulesDirectories: ['node_modules', 'src'],
+  },
+
   entry: [
     './src/client'
   ],

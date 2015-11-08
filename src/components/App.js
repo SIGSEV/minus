@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 
 if (process.env.BROWSER === true) {
-  require('../styles/main.scss')
+  require('styles/main.scss')
 }
 
 class Container extends Component {

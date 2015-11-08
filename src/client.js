@@ -5,9 +5,9 @@ import { Provider } from 'react-redux'
 import { Router } from 'react-router'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 
-import config from '../config'
-import reducer from './reducers'
-import routes from './routes'
+import config from 'config'
+import reducer from 'reducers'
+import routes from 'routes'
 
 
 const history = createBrowserHistory()
