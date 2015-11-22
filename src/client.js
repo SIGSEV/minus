@@ -1,9 +1,10 @@
 import React from 'react'
 import { compose } from 'lodash'
 import { render } from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { Router } from 'react-router'
+import thunk from 'redux-thunk'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 
 import config from 'config'
@@ -17,6 +18,7 @@ const initialState = (config.env === 'production')
   : {}
 
 const store = compose(
+  applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore)(reducer, initialState)
 
