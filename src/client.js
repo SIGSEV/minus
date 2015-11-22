@@ -1,4 +1,5 @@
 import React from 'react'
+import { compose } from 'lodash'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -15,21 +16,14 @@ const initialState = (config.env === 'production')
   ? window.__INITIAL_STATE__
   : {}
 
-const devTools = (config.devtools)
-  ? require('./dev/tools')
-  : null
-
-const store = (config.devtools)
-  ? devTools.devStore(reducer, initialState)
-  : createStore(reducer, initialState)
+const store = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+)(createStore)(reducer, initialState)
 
 const rootComponent = (
-  <div>
-    <Provider store={store}>
-      <Router children={routes} history={history} />
-    </Provider>
-    {config.devtools && <devTools.DevComponent store={store} />}
-  </div>
+  <Provider store={store}>
+    <Router children={routes} history={history} />
+  </Provider>
 )
 
 const mountNode = document.getElementById('root')
