@@ -1,22 +1,15 @@
-import path from 'path'
 import webpack from 'webpack'
 import { StatsWriterPlugin } from 'webpack-stats-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
+import webpackConfig from './config'
+
 export default {
-
-  resolve: {
-    modulesDirectories: ['node_modules', 'src'],
-  },
-
-  entry: [
-    './src/client'
-  ],
+  ...webpackConfig,
 
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'bundle-[hash].js',
-    publicPath: '/dist/'
+    ...webpackConfig.output,
+    filename: 'bundle-[hash].js'
   },
 
   module: {
@@ -32,14 +25,7 @@ export default {
   },
 
   plugins: [
-
-    // env variables
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-        BROWSER: JSON.stringify(true)
-      }
-    }),
+    ...webpackConfig.plugins,
 
     // extract styles
     new ExtractTextPlugin('styles-[hash].css'),

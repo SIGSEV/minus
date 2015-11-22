@@ -1,22 +1,16 @@
-import path from 'path'
 import webpack from 'webpack'
 
-export default {
+import webpackConfig from './config'
 
-  resolve: {
-    modulesDirectories: ['node_modules', 'src'],
-  },
+export default {
+  ...webpackConfig,
+
+  devtool: 'sourcemap',
 
   entry: [
-    'webpack-hot-middleware/client',
-    './src/client'
+    ...webpackConfig.entry,
+    'webpack-hot-middleware/client'
   ],
-
-  output: {
-    path: path.join(__dirname, '../src/dist'),
-    filename: 'bundle.js',
-    publicPath: '/dist/'
-  },
 
   module: {
     loaders: [{
@@ -47,17 +41,9 @@ export default {
   },
 
   plugins: [
+    ...webpackConfig.plugins,
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-        DEVTOOLS: JSON.stringify(!!process.env.DEVTOOLS),
-        BROWSER: JSON.stringify(true)
-      }
-    })
-  ],
-
-  devtool: 'sourcemap'
+    new webpack.NoErrorsPlugin()
+  ]
 
 }
