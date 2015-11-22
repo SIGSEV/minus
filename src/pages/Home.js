@@ -8,7 +8,7 @@ import { increment } from 'actions/counter'
     counter: state.counter
   })
 )
-class Todo extends Component {
+class Home extends Component {
 
   handleIncrement () {
     const { dispatch } = this.props
@@ -28,4 +28,4 @@ class Todo extends Component {
 
 }
 
-export default Todo
+export default Home
