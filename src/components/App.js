@@ -11,7 +11,10 @@ class Container extends Component {
 
     return (
       <div>
-        <Link to='/'>Home</Link>
+        <div className='Navbar'>
+          <Link to='/'>Home</Link>
+          <Link to='/login'>Login</Link>
+        </div>
         <hr />
         {this.props.children}
       </div>

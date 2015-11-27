@@ -19,3 +19,9 @@ button, a { cursor: pointer }
 button {
   background: lightgray
 }
+
+.Navbar {
+  a + a {
+    margin-left: 10px;
+  }
+}
