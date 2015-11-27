@@ -1,25 +1,32 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 
 if (process.env.BROWSER === true) {
   require('styles/main.scss')
 }
 
-class Container extends Component {
+import Nav from 'components/Nav'
+
+class App extends Component {
 
   render () {
 
     return (
-      <div>
-        <div className='Navbar'>
-          <Link to='/'>Home</Link>
-          <Link to='/login'>Login</Link>
-        </div>
-        <hr />
+      <div className='brand'>
+
+        <header>
+          <h1>{'The Minus Project'}</h1>
+          <em>{'Minimalist starter for universal apps'}</em>
+        </header>
+
+        <Nav />
+
+        <hr/>
+
         {this.props.children}
+
       </div>
     )
   }
 }
 
-export default Container
+export default App

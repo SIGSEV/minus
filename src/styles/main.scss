@@ -1,10 +1,12 @@
+// -----------
+// BASIC RESET
+// -----------
+
 * {
   font: inherit;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: none;
-  background-color: transparent;
   outline: none;
 }
 
@@ -16,12 +18,31 @@ body {
 
 button, a { cursor: pointer }
 
-button {
-  background: lightgray
+// -----------
+// DEMO STYLES
+// -----------
+
+h1 {
+  font-weight: bold;
 }
 
-.Navbar {
-  a + a {
-    margin-left: 10px;
+em {
+  font-style: italic;
+  font-size: 0.75rem;
+  color: gray;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px dashed lightgray;
+  margin: 2rem 0;
+}
+
+.brand {
+  width: 400px;
+  margin: 10rem auto;
+  > header {
+    margin: 2rem 0;
+    text-align: center;
   }
 }
