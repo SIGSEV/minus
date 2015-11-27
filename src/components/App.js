@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-if (process.env.BROWSER === true) {
+if (process.env.BROWSER) {
   require('styles/main.scss')
 }
 

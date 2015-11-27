@@ -4,6 +4,8 @@ import compression from 'compression'
 
 import config from 'config'
 
+delete process.env.BROWSER
+
 const server = express()
 
 if (config.env === 'development') {
