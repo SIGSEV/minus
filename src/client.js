@@ -24,6 +24,12 @@ const store = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore)(reducer, initialState)
 
+if (module.hot) {
+  module.hot.accept('./reducers/index', () => {
+    store.replaceReducer(require('./reducers'))
+  })
+}
+
 const rootComponent = (
   <Provider store={store}>
     <ReduxRouter/>
