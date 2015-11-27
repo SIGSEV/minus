@@ -22,9 +22,9 @@ class Nav extends Component {
 
 }
 
-const NavLink = (props) => (
+const NavLink = ({ to, children }) => (
   <span className='NavLink'>
-    {'[ '}<Link to={props.to}>{props.children}</Link>{' ]'}
+    {'[ '}<Link to={to}>{children}</Link>{' ]'}
   </span>
 )
 
