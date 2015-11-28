@@ -13,7 +13,7 @@ export default {
   },
 
   module: {
-    loaders: [{
+    loaders: [...webpackConfig.loaders, {
       test: /\.js$/,
       loaders: ['babel'],
       exclude: /node_modules/

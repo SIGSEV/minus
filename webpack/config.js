@@ -9,6 +9,11 @@ export default {
     modulesDirectories: ['node_modules', 'src'],
   },
 
+  loaders: [{
+    test: /\.(woff|woff2|eot|svg|ttf)$/,
+    loader: 'url?limit=100000'
+  }],
+
   entry: [
     './src/client'
   ],
