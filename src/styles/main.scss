@@ -18,6 +18,17 @@ body {
 
 button, a { cursor: pointer }
 
+.z {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zsa {
+  @extend .z;
+  justify-content: space-around;
+}
+
 // -----------
 // DEMO STYLES
 // -----------
@@ -47,8 +58,32 @@ hr {
   }
 }
 
+.Home {
+  h3 + div {
+    margin: 1rem 0;
+  }
+}
+
 .Counter {
   font-size: 3em;
   text-align: center;
-  margin: 1rem 0;
+  margin: 2rem 0;
+}
+
+.DemoBtn {
+
+  padding: 0 4px;
+  border: 2px solid rgba(black, .1);
+  background: none;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: rgba(black, .6);
+    background-color: rgba(black, .6);
+    color: white;
+  }
+
 }
