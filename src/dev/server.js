@@ -24,6 +24,7 @@ export default server => {
 
           <base href='/'>
           <meta charset='utf-8'>
+          <link rel='icon' href='assets/favicon.ico' type='image/x-icon'>
 
           <title>App</title>
 

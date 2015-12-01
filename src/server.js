@@ -8,6 +8,8 @@ delete process.env.BROWSER
 
 const server = express()
 
+server.use('/assets', express.static(path.join(__dirname, './assets')))
+
 if (config.env === 'development') {
   require('dev/server')(server)
 }
