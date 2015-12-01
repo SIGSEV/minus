@@ -23,6 +23,7 @@
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
     "history": "^1.12.5",
+    "html-minifier": "^1.0.0",
     "lodash": "^3.10.1",
     "node-sass": "^3.4.1",
     "react": "^0.14.0",

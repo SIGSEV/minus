@@ -4,6 +4,7 @@ import createLocation from 'history/lib/createLocation'
 import { RoutingContext, match } from 'react-router'
 import { renderToString } from 'react-dom/server'
 import { createStore } from 'redux'
+import { minify } from 'html-minifier'
 
 import routes from 'routes'
 import reducer from 'reducers'
@@ -52,7 +53,11 @@ export default (req, res) => {
         </body>
       </html>
     `
-    res.end(page)
+    res.end(minify(page, {
+      removeComments: true,
+      collapseWhitespace: true,
+      conservativeCollapse: true
+    }))
 
   })
 
