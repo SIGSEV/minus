@@ -22,16 +22,16 @@ export default server => {
       <html>
         <head>
 
-          <base href='/'>
-          <meta charset='utf-8'>
-          <link rel='icon' href='assets/favicon.ico' type='image/x-icon'>
+          <base href="/">
+          <meta charset="utf-8">
+          <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
           <title>App</title>
 
         </head>
         <body>
-          <div id='root'></div>
-          <script src='dist/bundle.js'></script>
+          <div id="root"></div>
+          <script src="dist/bundle.js"></script>
         </body>
       </html>
     `

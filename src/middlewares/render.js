@@ -33,13 +33,13 @@ export default (req, res) => {
       <html>
         <head>
 
-          <base href='/'>
-          <meta charset='utf-8'>
-          <link rel='icon' href='assets/favicon.ico' type='image/x-icon'>
+          <base href="/">
+          <meta charset="utf-8">
+          <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
           <title>App</title>
 
-          <link href='dist/${style}' rel='stylesheet'/>
+          <link href="dist/${style}" rel="stylesheet"/>
 
           <script>
             window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
@@ -47,8 +47,8 @@ export default (req, res) => {
 
         </head>
         <body>
-          <div id='root'>${rootHtml}</div>
-          <script src='dist/${main}'></script>
+          <div id="root">${rootHtml}</div>
+          <script src="dist/${main}"></script>
         </body>
       </html>
     `
