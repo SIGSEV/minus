@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-if (process.env.BROWSER) {
-  require('styles/components/Nav.scss')
-}
-
 class Nav extends Component {
 
   render () {
@@ -13,8 +9,8 @@ class Nav extends Component {
         <NavLink to='/'>
           {'Home'}
         </NavLink>
-        <NavLink to='/login'>
-          {'Login'}
+        <NavLink to='/example'>
+          {'Example of actions'}
         </NavLink>
       </div>
     )

@@ -10,9 +10,12 @@
   outline: none;
 }
 
+html {
+  font-size: 12px;
+  line-height: 18px;
+}
+
 body {
-  font-size: 16px;
-  line-height: 24px;
   font-family: monospace;
 }
 
@@ -33,13 +36,22 @@ button, a { cursor: pointer }
 // DEMO STYLES
 // -----------
 
+ul {
+  margin-left: 1rem;
+}
+
 h1 {
+  font-size: 1.5em;
   font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2em;
 }
 
 em {
   font-style: italic;
-  font-size: 0.75rem;
   color: gray;
 }
 
@@ -49,6 +61,14 @@ hr {
   margin: 2rem 0;
 }
 
+button + button {
+  margin-left: 1rem;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
 .brand {
   width: 400px;
   margin: 10rem auto;
@@ -56,34 +76,4 @@ hr {
     margin: 2rem 0;
     text-align: center;
   }
-}
-
-.Home {
-  h3 + div {
-    margin: 1rem 0;
-  }
-}
-
-.Counter {
-  font-size: 3em;
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.DemoBtn {
-
-  padding: 0 4px;
-  border: 2px solid rgba(black, .1);
-  background: none;
-
-  &:disabled {
-    cursor: default;
-  }
-
-  &:hover:not(:disabled) {
-    border-color: rgba(black, .6);
-    background-color: rgba(black, .6);
-    color: white;
-  }
-
 }

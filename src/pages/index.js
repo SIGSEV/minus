@@ -1,2 +1,2 @@
 export Home from './Home'
-export Login from './Login'
+export Example from './Example'

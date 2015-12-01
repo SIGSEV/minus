@@ -1,52 +1,27 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
-import { fetchCounter, increment, decrement } from 'actions/counter'
-
-@connect(
-  state => ({
-    counter: state.counter
-  })
-)
-class HomePage extends Component {
-
-  increment () {
-    const { dispatch } = this.props
-    dispatch(increment())
-  }
-
-  decrement () {
-    const { dispatch } = this.props
-    dispatch(decrement())
-  }
-
-  fetch () {
-    const { dispatch } = this.props
-    dispatch(fetchCounter())
-  }
+class Home extends Component {
 
   render () {
-    const { value, fetching } = this.props.counter
-
     return (
-      <div className='Home'>
-
-        <h1 className='Counter'>{fetching ? 'Loading...' : value}</h1>
-
-        <h3>{'Actions can be quite simple'}</h3>
-        <div className='zsa'>
-          <button onClick={::this.increment} disabled={fetching} className='DemoBtn'>{'Increment'}</button>
-          <button onClick={::this.decrement} disabled={fetching} className='DemoBtn'>{'Decrement'}</button>
-        </div>
-        <h3>{'But also asynchronous, like an API call.'}</h3>
-        <div className='z'>
-          <button onClick={::this.fetch} disabled={fetching} className='DemoBtn'>{'Fake Fetch'}</button>
-        </div>
-
+      <div>
+        <ul>
+          <li>{'No bullshit. Just the code.'}</li>
+          <li>{'100% ES6/ES7'}</li>
+          <li>{'Fully linted, with large amount of eslint rules'}</li>
+          <li>
+            {'Happy developer experience:'}
+            <ul>
+              <li>{'Hot reloading components / reducers / styles'}</li>
+              <li>{'Fine grained webpack configs, with dev / prod modes and optimized build.'}</li>
+              <li>{'Out-of-the-box support of redux-devtools chrome extension'}</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     )
   }
 
 }
 
-export default HomePage
+export default Home
