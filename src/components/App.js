@@ -14,15 +14,20 @@ class App extends Component {
       <div className='brand'>
 
         <header>
-          <h1>{'The Minus Project'}</h1>
+
+          <h1>{'minus'}</h1>
           <em>{'Minimalist starter for universal apps'}</em>
+
         </header>
 
         <Nav />
 
-        <hr/>
-
         {this.props.children}
+
+        <footer>
+          <em>{'No fucking copyright. '}</em>
+          <a target='_blank' href='https://github.com/SIGSEV/minus'>Code is on Github</a>
+        </footer>
 
       </div>
     )

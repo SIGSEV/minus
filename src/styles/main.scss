@@ -1,79 +1,39 @@
-// -----------
-// BASIC RESET
-// -----------
-
-* {
-  font: inherit;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  outline: none;
-}
-
-html {
-  font-size: 12px;
-  line-height: 18px;
-}
-
 body {
   font-family: monospace;
-}
-
-button, a { cursor: pointer }
-
-.z {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.zsa {
-  @extend .z;
-  justify-content: space-around;
-}
-
-// -----------
-// DEMO STYLES
-// -----------
-
-ul {
-  margin-left: 1rem;
-}
-
-h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 1.5rem;
   line-height: 2em;
 }
 
-em {
-  font-style: italic;
+button {
+  font: inherit;
+  cursor: pointer
+}
+
+button {
+  margin-left: 0.25rem;
+}
+
+nav {
+  margin-bottom: 3rem;
+}
+
+footer {
+  margin-top: 5rem;
+  text-align: right;
   color: gray;
 }
 
-hr {
-  border: none;
-  border-bottom: 1px dashed lightgray;
-  margin: 2rem 0;
-}
-
-button + button {
-  margin-left: 1rem;
-}
-
-p + p {
-  margin-top: 1rem;
-}
-
 .brand {
-  width: 400px;
-  margin: 10rem auto;
+  width: 600px;
+  margin: 5rem auto 0 auto;
   > header {
     margin: 2rem 0;
     text-align: center;
   }
+}
+
+.counter {
+  padding: 2rem;
+  background: lightsteelblue;
+  font-weight: bold;
+  display: inline-block;
 }

@@ -25,7 +25,7 @@ class Example extends Component {
 
     return (
       <div>
-        <h2>{'counter: '}{value}</h2>
+        <div className='counter'>{value}</div>
 
         <button onClick={decrement}>
           {'decrement'}

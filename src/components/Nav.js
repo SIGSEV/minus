@@ -5,21 +5,21 @@ class Nav extends Component {
 
   render () {
     return (
-      <div className='Nav'>
+      <nav>
         <NavLink to='/'>
           {'Home'}
         </NavLink>
         <NavLink to='/example'>
           {'Example of actions'}
         </NavLink>
-      </div>
+      </nav>
     )
   }
 
 }
 
 const NavLink = ({ to, children }) => (
-  <span className='NavLink'>
+  <span>
     {'[ '}<Link to={to}>{children}</Link>{' ]'}
   </span>
 )
