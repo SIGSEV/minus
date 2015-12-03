@@ -1,6 +1,5 @@
-# minus
-
-## Minimalist starter for universal apps
+<h1 align="center">minus</h1>
+<p align="center">Minimalist starter for universal apps</p>
 
 - **No. Fucking. Bullshit.** Just the code.
 - 100% ES6/ES7
