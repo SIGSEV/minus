@@ -26,7 +26,7 @@ Launch the build:
 npm run build
 ```
 
-Launch the app in prod mode (universal rendering):
+Launch the app in prod mode (with universal rendering):
 
 ```
 npm run prod
