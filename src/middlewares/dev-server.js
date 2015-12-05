@@ -1,7 +1,10 @@
+import React from 'react'
+import { renderToString } from 'react-dom/server'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
+import { Html } from 'components'
 import webpackConfig from '../../webpack/development'
 
 export default server => {
@@ -17,24 +20,9 @@ export default server => {
   server.use(webpackHotMiddleware(compiler))
 
   server.use((req, res) => {
-    const page = `
-      <!doctype html>
-      <html>
-        <head>
-
-          <base href="/">
-          <meta charset="utf-8">
-          <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-
-          <title>App</title>
-
-        </head>
-        <body>
-          <div id="root"></div>
-          <script src="dist/bundle.js"></script>
-        </body>
-      </html>
-    `
+    const HtmlComponent = <Html />
+    const markup = renderToString(HtmlComponent)
+    const page = `<!doctype html>${markup}`
     res.end(page)
   })
 

@@ -1,22 +1,20 @@
+delete process.env.BROWSER
+
 import express from 'express'
 import compression from 'compression'
 
 import config from 'config'
-import render from 'middlewares/render'
-import devServer from 'middlewares/dev-server'
-
-delete process.env.BROWSER
 
 const server = express()
 
 if (config.env === 'development') {
-  devServer(server)
+  require('middlewares/dev-server')(server)
 }
 
 if (config.env === 'production') {
   server.use(compression())
   server.use('/dist', express.static(config.distFolder))
-  server.use(render)
+  server.use(require('middlewares/render'))
 }
 
 server.use('/assets', express.static(config.assetsFolder))
