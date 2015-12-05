@@ -6,12 +6,8 @@ class Nav extends Component {
   render () {
     return (
       <nav>
-        <NavLink to='/'>
-          {'Home'}
-        </NavLink>
-        <NavLink to='/example'>
-          {'Example of actions'}
-        </NavLink>
+        <NavLink to='/'>{'Home'}</NavLink>
+        <NavLink to='/example'>{'Example of actions'}</NavLink>
       </nav>
     )
   }

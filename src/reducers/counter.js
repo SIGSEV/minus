@@ -1,11 +1,8 @@
 import { handleActions } from 'redux-actions'
 
-const initialState = {
-  value: 0,
-  fetching: false
-}
+const initialState = { value: 0, fetching: false }
 
-const reducer = handleActions({
+export default handleActions({
 
   INCREMENT: state => ({ ...state, value: state.value + 1 }),
   DECREMENT: state => ({ ...state, value: state.value - 1 }),
@@ -13,5 +10,3 @@ const reducer = handleActions({
   FETCHED: state => ({ ...state, fetching: false })
 
 }, initialState)
-
-export default reducer

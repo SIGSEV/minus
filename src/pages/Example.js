@@ -5,9 +5,7 @@ import { connect } from 'react-redux'
 import * as counterActions from 'actions/counter'
 
 @connect(
-  state => ({
-    counter: state.counter
-  }),
+  state => ({ counter: state.counter }),
   dispatch => bindActionCreators(counterActions, dispatch)
 )
 class Example extends Component {

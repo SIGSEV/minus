@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 
-if (process.env.BROWSER) {
-  require('styles/main.scss')
-}
+if (process.env.BROWSER) { require('styles/main.scss') }
 
-import Nav from 'components/Nav'
+import { Nav } from 'components'
 
 class App extends Component {
 
