@@ -9,17 +9,17 @@ delete process.env.BROWSER
 
 const server = express()
 
-server.use('/assets', config.assetsFolder)
-
 if (config.env === 'development') {
   devServer(server)
 }
 
 if (config.env === 'production') {
   server.use(compression())
-  server.use('/dist', config.distFolder)
+  server.use('/dist', express.static(config.distFolder))
   server.use(render)
 }
+
+server.use('/assets', express.static(config.assetsFolder))
 
 server.listen(config.port, 'localhost', err => {
   if (err) { return console.log(err) }
