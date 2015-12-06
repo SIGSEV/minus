@@ -4,6 +4,7 @@ import express from 'express'
 import compression from 'compression'
 
 import config from 'config'
+import render from 'middlewares/render'
 
 const server = express()
 
@@ -16,7 +17,7 @@ if (config.env === 'production') {
   server.use('/dist', express.static(config.distFolder))
 }
 
-server.use(require('middlewares/render'))
+server.use(render)
 server.use('/assets', express.static(config.assetsFolder))
 
 server.listen(config.port, 'localhost', err => {
