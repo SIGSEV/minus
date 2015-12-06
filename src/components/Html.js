@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({ children, state, style, main = 'bundle.js' }) => (
+export default ({ content, state, stats: { style, main = 'bundle.js' } }) => (
   <html>
     <head>
 
@@ -21,7 +21,7 @@ export default ({ children, state, style, main = 'bundle.js' }) => (
     </head>
     <body>
 
-      <div id='root'>{children}</div>
+      <div id='root' dangerouslySetInnerHTML={{ __html: content }}/>
       <script src={`dist/${main}`}></script>
 
     </body>

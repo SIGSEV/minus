@@ -1,14 +1,15 @@
+import path from 'path'
 import React from 'react'
 import { Provider } from 'react-redux'
 import createLocation from 'history/lib/createLocation'
 import { RoutingContext, match } from 'react-router'
-import { renderToString } from 'react-dom/server'
+import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 import { createStore } from 'redux'
 
+import config from 'config'
 import { Html } from 'components'
 import routes from 'routes'
 import reducer from 'reducers'
-import { main, style } from '../../dist/stats.json'
 
 export default (req, res) => {
 
@@ -28,15 +29,18 @@ export default (req, res) => {
 
     const state = store.getState()
 
+    const stats = (config.env === 'production')
+      ? require(path.join(config.distFolder, 'stats.json'))
+      : {}
+
     const HtmlComponent = (
       <Html
-        main={main}
-        style={style}
-        children={app}
+        stats={stats}
+        content={renderToString(app)}
         state={state}/>
     )
 
-    const markup = renderToString(HtmlComponent)
+    const markup = renderToStaticMarkup(HtmlComponent)
     const page = `<!doctype html>${markup}`
     res.end(page)
 
