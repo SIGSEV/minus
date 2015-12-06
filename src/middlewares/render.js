@@ -10,6 +10,8 @@ import { Html } from 'components'
 import routes from 'routes'
 import createStore from 'createStore'
 
+import { increment } from 'actions/counter'
+
 export default (req, res) => {
 
   const location = createLocation(req.url)
@@ -21,29 +23,35 @@ export default (req, res) => {
 
     const store = createStore()
 
-    const app = (
-      <Provider store={store}>
-        <RoutingContext {...renderProps}/>
-      </Provider>
-    )
+    Promise.all([
+      store.dispatch(increment())
+    ]).then(() => {
 
-    const state = store.getState()
+      const app = (
+        <Provider store={store}>
+          <RoutingContext {...renderProps}/>
+        </Provider>
+      )
 
-    const stats = (config.env === 'production')
-      ? require(path.join(config.distFolder, 'stats.json'))
-      : {}
+      const state = store.getState()
 
-    const HtmlComponent = (
-      <Html
-        stats={stats}
-        content={renderToString(app)}
-        state={state}/>
-    )
+      const stats = (config.env === 'production')
+        ? require(path.join(config.distFolder, 'stats.json'))
+        : {}
 
-    const markup = renderToStaticMarkup(HtmlComponent)
-    const page = `<!doctype html>${markup}`
-    res.end(page)
+      const HtmlComponent = (
+        <Html
+          stats={stats}
+          content={renderToString(app)}
+          state={state}/>
+      )
 
+      const markup = renderToStaticMarkup(HtmlComponent)
+      const page = `<!doctype html>${markup}`
+
+      res.end(page)
+
+    })
   })
 
 }
