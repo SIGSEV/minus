@@ -4,17 +4,15 @@ import { Provider } from 'react-redux'
 import createLocation from 'history/lib/createLocation'
 import { RoutingContext, match } from 'react-router'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
-import { createStore } from 'redux'
 
 import config from 'config'
 import { Html } from 'components'
 import routes from 'routes'
-import reducer from 'reducers'
+import store from 'store'
 
 export default (req, res) => {
 
   const location = createLocation(req.url)
-  const store = createStore(reducer)
 
   match({ routes, location }, (err, redirectLocation, renderProps) => {
 
