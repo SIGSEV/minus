@@ -1,5 +1,3 @@
-delete process.env.BROWSER
-
 import express from 'express'
 import compression from 'compression'
 
