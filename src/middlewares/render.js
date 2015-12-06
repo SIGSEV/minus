@@ -22,7 +22,7 @@ export default (req, res) => {
 
     const app = (
       <Provider store={store}>
-        <RoutingContext {...renderProps} />
+        <RoutingContext {...renderProps}/>
       </Provider>
     )
 

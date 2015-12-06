@@ -20,7 +20,7 @@ export default server => {
   server.use(webpackHotMiddleware(compiler))
 
   server.use((req, res) => {
-    const HtmlComponent = <Html />
+    const HtmlComponent = <Html/>
     const markup = renderToString(HtmlComponent)
     const page = `<!doctype html>${markup}`
     res.end(page)

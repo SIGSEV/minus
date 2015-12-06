@@ -18,7 +18,7 @@ class App extends Component {
 
         </header>
 
-        <Nav />
+        <Nav/>
 
         {this.props.children}
 

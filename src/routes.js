@@ -6,7 +6,7 @@ import { Home, Example } from 'pages'
 
 export default (
   <Route path='/' component={App}>
-    <IndexRoute component={Home} />
+    <IndexRoute component={Home}/>
     <Route path='example' component={Example}/>
   </Route>
 )
