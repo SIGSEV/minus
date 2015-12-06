@@ -8,7 +8,7 @@ import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 import config from 'config'
 import { Html } from 'components'
 import routes from 'routes'
-import store from 'store'
+import createStore from 'createStore'
 
 export default (req, res) => {
 
@@ -18,6 +18,8 @@ export default (req, res) => {
 
     if (err) { return res.status(500).end('internal server error') }
     if (!renderProps) { return res.status(404).end('not found') }
+
+    const store = createStore()
 
     const app = (
       <Provider store={store}>
