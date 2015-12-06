@@ -1,35 +1,23 @@
-import React, { Component } from 'react'
-
-import { Nav } from 'components'
+import React from 'react'
 
 if (process.env.BROWSER) { require('styles/main.scss') }
 
-class App extends Component {
+export default ({ children }) => (
+  <div className='brand'>
 
-  render () {
+    <header>
 
-    return (
-      <div className='brand'>
+      <h1>{'minus'}</h1>
+      <em>{'Minimalist starter for universal apps'}</em>
 
-        <header>
+    </header>
 
-          <h1>{'minus'}</h1>
-          <em>{'Minimalist starter for universal apps'}</em>
+    {children}
 
-        </header>
+    <footer>
+      <em>{'No fucking copyright. '}</em>
+      <a target='_blank' href='https://github.com/SIGSEV/minus'>Code is on Github</a>
+    </footer>
 
-        <Nav/>
-
-        {this.props.children}
-
-        <footer>
-          <em>{'No fucking copyright. '}</em>
-          <a target='_blank' href='https://github.com/SIGSEV/minus'>Code is on Github</a>
-        </footer>
-
-      </div>
-    )
-  }
-}
-
-export default App
+  </div>
+)
