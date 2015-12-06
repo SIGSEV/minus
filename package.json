@@ -28,8 +28,6 @@
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0-rc3",
-    "react-transform-catch-errors": "^1.0.0",
-    "react-transform-hmr": "^1.0.0",
     "redux": "^3.0.2",
     "redux-actions": "^0.8.0",
     "redux-router": "^1.0.0-beta4",
@@ -47,6 +45,8 @@
     "eslint-config-zavatta": "^2.0.0",
     "eslint-config-zavatta-react": "^1.2.0",
     "eslint-plugin-react": "^3.5.1",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.0",
     "redbox-react": "^1.0.1",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.0.0"
