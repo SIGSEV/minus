@@ -3,37 +3,18 @@ body {
   line-height: 2em;
 }
 
-button {
-  font: inherit;
-  cursor: pointer
-}
-
-button {
-  margin-left: 0.25rem;
-}
-
-nav {
-  margin-bottom: 3rem;
-}
-
-footer {
-  margin-top: 5rem;
-  text-align: right;
-  color: gray;
-}
-
 .brand {
   width: 600px;
   margin: 5rem auto 0 auto;
+
   > header {
     margin: 2rem 0;
     text-align: center;
   }
-}
 
-.counter {
-  padding: 2rem;
-  background: lightsteelblue;
-  font-weight: bold;
-  display: inline-block;
+  > footer {
+    margin-top: 5rem;
+    text-align: right;
+    color: gray;
+  }
 }
