@@ -6,7 +6,7 @@ export default () => (
       <strong style={{ color: 'red' }}>{'No. Fucking. Bullshit.'}</strong>
       {' Just the code.'}
     </li>
-    <li>{'100% ES6/ES7'}</li>
+    <li>{'100% ES6/ES7 using Babel 6'}</li>
     <li>{'100% universal — page is rendered server side for initial load'}</li>
     <li>
       {'Use  '}

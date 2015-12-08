@@ -2,7 +2,7 @@
 <p align="center">Minimalist starter for universal apps</p>
 
 - **No. Fucking. Bullshit.** Just the code.
-- 100% ES6/ES7
+- 100% ES6/ES7 using Babel 6.
 - 100% universal — page is rendered server side for initial load
 - Use [React](https://github.com/facebook/react), [Redux](https://github.com/rackt/redux) and [react-router](https://github.com/rackt/react-router)
 - Fully linted, with large amount of eslint rules
