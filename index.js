@@ -1,4 +1,4 @@
 delete process.env.BROWSER
 
-require('babel/register')
+require('babel-core/register')
 require('./src/server')
