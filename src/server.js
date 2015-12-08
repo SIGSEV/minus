@@ -15,8 +15,8 @@ if (config.env === 'production') {
   server.use('/dist', express.static(config.distFolder))
 }
 
-server.use(render)
 server.use('/assets', express.static(config.assetsFolder))
+server.use(render)
 
 server.listen(config.port, 'localhost', err => {
   if (err) { return console.log(err) }
