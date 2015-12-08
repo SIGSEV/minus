@@ -16,7 +16,7 @@ export default ({ children }) => (
 
     <footer>
       <em>{'No fucking copyright. '}</em>
-      <a target='_blank' href='https://github.com/SIGSEV/minus'>Code is on Github</a>
+      <a target='_blank' href='https://github.com/SIGSEV/minus'>{'Code is on Github'}</a>
     </footer>
 
   </div>
