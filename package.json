@@ -44,7 +44,7 @@
   "devDependencies": {
     "babel-cli": "^6.3.15",
     "babel-eslint": "^4.1.4",
-    "babel-plugin-react-transform": "git://github.com/justingreenberg/babel-plugin-react-transform.git#master",
+    "babel-plugin-react-transform": "^2.0.0-beta1",
     "eslint": "^1.7.1",
     "eslint-config-zavatta": "^2.0.0",
     "eslint-config-zavatta-react": "^1.2.0",
