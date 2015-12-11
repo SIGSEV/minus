@@ -1,5 +1,6 @@
 import webpack from 'webpack'
 import ProgressPlugin from 'webpack/lib/ProgressPlugin'
+
 import webpackConfig from '../webpack/production'
 
 const bundler = webpack(webpackConfig)
