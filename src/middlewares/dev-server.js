@@ -4,7 +4,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 
 import webpackConfig from '../../webpack/development'
 
-const fn = server => {
+export default server => {
 
   const compiler = webpack(webpackConfig)
 
@@ -17,5 +17,3 @@ const fn = server => {
   server.use(webpackHotMiddleware(compiler))
 
 }
-
-module.exports = fn

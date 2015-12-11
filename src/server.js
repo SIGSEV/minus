@@ -7,7 +7,7 @@ import render from 'middlewares/render'
 const server = express()
 
 if (config.env === 'development') {
-  require('middlewares/dev-server')(server)
+  require('middlewares/dev-server').default(server)
 }
 
 if (config.env === 'production') {
