@@ -2,6 +2,7 @@ import express from 'express'
 import compression from 'compression'
 
 import config from 'config'
+import api from 'api'
 import render from 'middlewares/render'
 
 const server = express()
@@ -13,6 +14,7 @@ if (config.env === 'development') {
 if (config.env === 'production') {
   server.use(compression())
   server.use('/dist', express.static(config.distFolder))
+  server.use(config.apiUrl, api)
 }
 
 server.use('/assets', express.static(config.assetsFolder))

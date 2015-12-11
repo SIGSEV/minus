@@ -1,5 +1,8 @@
 export default {
 
-  env: 'development'
+  env: 'development',
+
+  apiPort: 3001,
+  apiUrl: ''
 
 }

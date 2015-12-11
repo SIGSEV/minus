@@ -7,8 +7,10 @@
     "build": "npm run clean && npm run build:webpack",
     "build:webpack": "NODE_ENV=production babel-node bin/build",
     "preview": "npm run build && npm run prod",
-    "prod": "NODE_ENV=production npm start",
-    "start": "NODE_PATH=$NODE_PATH:./src node index",
+    "prod": "NODE_ENV=production npm run start:app",
+    "start:app": "NODE_PATH=$NODE_PATH:./src node index --app",
+    "start:api": "NODE_PATH=$NODE_PATH:./src nodemon --watch src/api --watch src/config index -- --api",
+    "start": "npm run start:app & npm run start:api & wait",
     "lint": "eslint src webpack bin"
   },
   "dependencies": {
