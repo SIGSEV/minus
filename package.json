@@ -51,6 +51,7 @@
     "eslint-config-zavatta": "^2.0.2",
     "eslint-config-zavatta-react": "^1.2.0",
     "eslint-plugin-react": "^3.11.3",
+    "nodemon": "^1.8.1",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
