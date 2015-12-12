@@ -23,7 +23,7 @@ class Home extends Component {
         <li>
           {'Happy developer experience:'}
           <ul>
-            <li>{'Hot reloading components, reducers and styles'}</li>
+            <li>{'Hot reloading components and styles'}</li>
             <li>{'Out-of-the-box support of redux-devtools chrome extension'}</li>
             <li>{'Ready to use build system, with assets renaming and optimizations'}</li>
           </ul>

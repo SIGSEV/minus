@@ -7,12 +7,6 @@ import createStore from 'createStore'
 
 const store = createStore()
 
-if (module.hot) {
-  module.hot.accept('./reducers/index', () => {
-    store.replaceReducer(require('./reducers'))
-  })
-}
-
 const rootComponent = (
   <Provider store={store}>
     <ReduxRouter/>

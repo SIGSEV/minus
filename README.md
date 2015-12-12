@@ -7,7 +7,7 @@
 - Use [React](https://github.com/facebook/react), [Redux](https://github.com/rackt/redux) and [react-router](https://github.com/rackt/react-router)
 - Fully linted, with large amount of eslint rules
 - Happy developer experience:
-  - Hot reloading components, reducers and styles
+  - Hot reloading components and styles
   - Out-of-the-box support of redux-devtools chrome extension
   - Ready to use build system, with assets renaming and optimizations
 
