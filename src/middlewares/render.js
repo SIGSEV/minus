@@ -17,7 +17,7 @@ const Html = ({ content, state, stats: { style, main = 'bundle.js' } }) => (
       <meta charSet='utf-8'/>
       <link rel='icon' href='assets/favicon.ico' type='image/x-icon'/>
 
-      <title>App</title>
+      <title>{'[::]'}</title>
 
       {style && (
         <link href={`dist/${style}`} rel='stylesheet'/>
