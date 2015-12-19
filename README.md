@@ -1,3 +1,9 @@
+<p align="right">
+  <a href="https://github.com/SIGSEV/minus">
+    <img src="https://img.shields.io/badge/scaffold-minus-blue.svg?style=flat-square">
+  </a>
+</p>
+
 <h1 align="center">minus</h1>
 <p align="center">Minimalist starter for universal apps</p>
 
