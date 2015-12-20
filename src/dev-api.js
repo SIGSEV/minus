@@ -1,4 +1,5 @@
 import express from 'express'
+import bodyParser from 'body-parser'
 
 import api from 'api'
 import config from 'config'
@@ -11,6 +12,7 @@ server.use((req, res, next) => {
   next()
 })
 
+server.use(bodyParser.json())
 server.use(config.apiUrl, api)
 
 server.listen(config.apiPort, 'localhost', (err) => {
