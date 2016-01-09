@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 
 import api from 'api'
+import { initSocketServer } from 'api/socket'
 import config from 'config'
 
 const server = express()
@@ -11,6 +12,8 @@ server.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
   next()
 })
+
+initSocketServer()
 
 server.use(bodyParser.json())
 server.use(config.apiUrl, api)

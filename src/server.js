@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 
 import config from 'config'
 import api from 'api'
+import { initSocketServer } from 'api/socket'
 import render from 'middlewares/render'
 
 const server = express()
@@ -13,6 +14,7 @@ if (config.env === 'development') {
 }
 
 if (config.env === 'production') {
+  initSocketServer()
   server.use(compression())
   server.use(bodyParser.json())
   server.use('/dist', express.static(config.distFolder))
