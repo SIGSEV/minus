@@ -1,5 +1,6 @@
 import express from 'express'
 import compression from 'compression'
+import bodyParser from 'body-parser'
 
 import config from 'config'
 import api from 'api'
@@ -13,6 +14,7 @@ if (config.env === 'development') {
 
 if (config.env === 'production') {
   server.use(compression())
+  server.use(bodyParser.json())
   server.use('/dist', express.static(config.distFolder))
   server.use(config.apiUrl, api)
 }
