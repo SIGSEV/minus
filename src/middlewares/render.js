@@ -1,7 +1,7 @@
 import path from 'path'
 import React from 'react'
 import { Provider } from 'react-redux'
-import createLocation from 'history/lib/createLocation'
+import { createLocation, createMemoryHistory } from 'history'
 import { RoutingContext, match } from 'react-router'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 
@@ -20,7 +20,7 @@ export default (req, res) => {
     if (err) { return res.status(500).end('internal server error') }
     if (!renderProps) { return res.status(404).end('not found') }
 
-    const store = createStore()
+    const store = createStore(createMemoryHistory())
 
     Promise.all([
       // initialization
