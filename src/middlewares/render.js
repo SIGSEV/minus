@@ -13,14 +13,16 @@ import Html from 'Html'
 
 export default (req, res) => {
 
-  const location = createLocation(req.url)
+  const { url } = req
+  const location = createLocation(url)
 
   match({ routes, location }, (err, redirectLocation, renderProps) => {
 
     if (err) { return res.status(500).end('internal server error') }
     if (!renderProps) { return res.status(404).end('not found') }
 
-    const store = createStore(createMemoryHistory())
+    const history = createMemoryHistory(url)
+    const store = createStore(history)
 
     Promise.all([
       // initialization
