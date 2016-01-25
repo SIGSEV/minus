@@ -40,8 +40,6 @@
     "redux-router": "^1.0.0-beta7",
     "redux-thunk": "^1.0.3",
     "sass-loader": "^3.1.2",
-    "socket.io": "^1.4.4",
-    "socket.io-client": "^1.4.4",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.11",

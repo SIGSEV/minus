@@ -7,7 +7,6 @@ export default {
 
   env,
   port: 3000,
-  socketPort: 3002,
 
   assetsFolder: path.join(__dirname, '../assets'),
   distFolder: path.join(__dirname, '../../dist'),
