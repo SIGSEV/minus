@@ -17,6 +17,10 @@
   - Out-of-the-box support of redux-devtools chrome extension
   - Ready to use build system, with assets renaming and optimizations
 
+### Examples                                                                       
+
+- Basic socket.io implementation: [example-sockets](https://github.com/SIGSEV/minus/tree/example-sockets)
+
 ### Usage
 
 Launch the dev environment (with hot-reloading):
