@@ -1,9 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import { reduxReactRouter } from 'redux-router'
+import { syncHistory } from 'react-router-redux'
 import thunk from 'redux-thunk'
 
 import reducer from 'reducers'
-import routes from 'routes'
 
 export default history => {
 
@@ -15,11 +14,9 @@ export default history => {
     ? window.devToolsExtension()
     : f => f
 
-  const router = reduxReactRouter({ routes, history })
-
   return compose(
+    applyMiddleware(syncHistory(history)),
     applyMiddleware(thunk),
-    router,
     devTools
   )(createStore)(reducer, initialState)
 
