@@ -1,5 +1,6 @@
 import path from 'path'
 import React from 'react'
+import { getPrefetchedData } from 'react-fetcher'
 import { Provider } from 'react-redux'
 import { createMemoryHistory } from 'history'
 import { RouterContext, match } from 'react-router'
@@ -24,9 +25,18 @@ export default (req, res) => {
 
     const store = createStore(history)
 
-    Promise.all([
-      // initialization
-    ]).then(() => {
+    const { dispatch } = store
+
+    const locals = {
+      path: renderProps.location.pathname,
+      query: renderProps.location.query,
+      params: renderProps.params,
+      dispatch
+    }
+
+    const components = renderProps.routes.map(route => route.component)
+
+    getPrefetchedData(components, locals).then(() => {
 
       const app = (
         <Provider store={store}>
