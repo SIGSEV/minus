@@ -4,26 +4,24 @@ const Html = ({ content, state, stats: { style, main = 'bundle.js' } }) => (
   <html>
     <head>
 
-      <base href='/'/>
-      <meta charSet='utf-8'/>
-      <link rel='icon' href='assets/favicon.ico' type='image/x-icon'/>
+      <base href='/' />
+      <meta charSet='utf-8' />
+      <link rel='icon' href='assets/favicon.ico' type='image/x-icon' />
 
       <title>{'[::]'}</title>
 
       {style && (
-        <link href={`dist/${style}`} rel='stylesheet'/>
+        <link href={`dist/${style}`} rel='stylesheet' />
       )}
 
       {state && (
-        <script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${JSON.stringify(state)}` }}/>
+        <script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${JSON.stringify(state)}` }} />
       )}
 
     </head>
     <body>
-
-      <div id='root' dangerouslySetInnerHTML={{ __html: content }}/>
-      <script src={`dist/${main}`}></script>
-
+      <div id='root' dangerouslySetInnerHTML={{ __html: content }} />
+      <script src={`dist/${main}`} />
     </body>
   </html>
 )

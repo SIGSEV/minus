@@ -6,6 +6,6 @@ import Home from 'pages/Home'
 
 export default (
   <Route path='/' component={App}>
-    <IndexRoute component={Home}/>
+    <IndexRoute component={Home} />
   </Route>
 )
