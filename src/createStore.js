@@ -14,10 +14,19 @@ export default history => {
     ? window.devToolsExtension()
     : f => f
 
-  return compose(
+  const store = compose(
     applyMiddleware(syncHistory(history)),
     applyMiddleware(thunk),
     devTools
   )(createStore)(reducer, initialState)
+
+  if (module.hot) {
+    module.hot.accept('./reducers', () => {
+      const nextRootReducer = require('./reducers').default
+      store.replaceReducer(nextRootReducer)
+    })
+  }
+
+  return store
 
 }
