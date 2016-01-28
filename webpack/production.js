@@ -19,7 +19,7 @@ export default {
       exclude: /node_modules/
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass'),
+      loader: ExtractTextPlugin.extract('style', 'css!postcss'),
       exclude: /node_modules/
     }]
   },

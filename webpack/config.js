@@ -1,22 +1,21 @@
 import webpack from 'webpack'
+import precss from 'precss'
+import autoprefixer from 'autoprefixer'
 import path from 'path'
 
 const env = process.env.NODE_ENV || 'development'
 
 export default {
 
+  entry: ['./src/client'],
+
   resolve: {
     modulesDirectories: ['node_modules', 'src'],
   },
 
-  loaders: [{
-    test: /\.(woff|woff2|eot|svg|ttf)$/,
-    loader: 'url?limit=100000'
-  }],
+  loaders: [],
 
-  entry: [
-    './src/client'
-  ],
+  postcss: () => [autoprefixer, precss],
 
   output: {
     path: path.join(__dirname, '../dist'),

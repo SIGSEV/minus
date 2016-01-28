@@ -14,7 +14,7 @@
     "lint": "eslint src webpack bin"
   },
   "dependencies": {
-    "autoprefixer-loader": "^3.2.0",
+    "autoprefixer": "^6.3.1",
     "babel-cli": "^6.4.5",
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
@@ -27,10 +27,10 @@
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
     "history": "^2.0.0-rc2",
     "lodash": "^4.0.1",
-    "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.0",
+    "precss": "^1.4.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-fetcher": "^0.3.0",
@@ -40,9 +40,7 @@
     "redux": "^3.0.6",
     "redux-actions": "^0.9.1",
     "redux-thunk": "^1.0.3",
-    "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
-    "url-loader": "^0.5.7",
     "webpack": "^1.12.12",
     "webpack-stats-plugin": "^0.1.1"
   },
