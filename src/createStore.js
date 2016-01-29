@@ -14,11 +14,12 @@ export default history => {
     ? window.devToolsExtension()
     : f => f
 
-  const store = compose(
-    applyMiddleware(syncHistory(history)),
-    applyMiddleware(thunk),
+  const enhancers = compose(
+    applyMiddleware(syncHistory(history), thunk),
     devTools
-  )(createStore)(reducer, initialState)
+  )
+
+  const store = createStore(reducer, initialState, enhancers)
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {
