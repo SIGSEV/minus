@@ -2,8 +2,7 @@ import path from 'path'
 import React from 'react'
 import { getPrefetchedData } from 'react-fetcher'
 import { Provider } from 'react-redux'
-import { createMemoryHistory } from 'history'
-import { RouterContext, match } from 'react-router'
+import { Router, match, createMemoryHistory } from 'react-router'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 
 import config from 'config'
@@ -40,7 +39,7 @@ export default (req, res) => {
 
       const app = (
         <Provider store={store}>
-          <RouterContext {...renderProps} />
+          <Router history={history} routes={routes} />
         </Provider>
       )
 
