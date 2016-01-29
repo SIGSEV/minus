@@ -1,6 +1,4 @@
 import webpack from 'webpack'
-import precss from 'precss'
-import autoprefixer from 'autoprefixer'
 import path from 'path'
 
 const env = process.env.NODE_ENV || 'development'
@@ -14,8 +12,6 @@ export default {
   },
 
   loaders: [],
-
-  postcss: () => [autoprefixer, precss],
 
   output: {
     path: path.join(__dirname, '../dist'),
