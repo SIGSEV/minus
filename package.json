@@ -28,17 +28,17 @@
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "history": "^2.0.0-rc2",
-    "lodash": "^4.0.1",
+    "lodash": "^4.1.0",
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.0",
     "precss": "^1.4.0",
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "react-fetcher": "^0.3.0",
-    "react-redux": "^4.0.6",
+    "react-redux": "^4.1.2",
     "react-router": "^2.0.0-rc5",
     "react-router-redux": "^2.1.0",
-    "redux": "^3.0.6",
+    "redux": "^3.1.4",
     "redux-actions": "^0.9.1",
     "redux-thunk": "^1.0.3",
     "style-loader": "^0.13.0",
@@ -57,6 +57,6 @@
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
     "webpack-dev-middleware": "^1.5.1",
-    "webpack-hot-middleware": "^2.6.3"
+    "webpack-hot-middleware": "^2.6.4"
   }
 }
