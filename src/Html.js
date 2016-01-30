@@ -4,7 +4,6 @@ const Html = ({ content, state, stats: { style, main = 'bundle.js' } }) => (
   <html>
     <head>
 
-      <base href='/' />
       <meta charSet='utf-8' />
       <link rel='icon' href='assets/favicon.ico' type='image/x-icon' />
 
