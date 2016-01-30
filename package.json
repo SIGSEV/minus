@@ -45,7 +45,7 @@
     "webpack-stats-plugin": "^0.1.1"
   },
   "devDependencies": {
-    "babel-eslint": "^5.0.0-beta7",
+    "babel-eslint": "^5.0.0-beta8",
     "babel-plugin-react-transform": "^2.0.0",
     "eslint": "^1.10.3",
     "eslint-config-zavatta": "^2.0.2",
