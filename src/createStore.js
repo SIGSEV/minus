@@ -10,7 +10,9 @@ export default history => {
     ? window.__INITIAL_STATE__
     : {}
 
-  const devTools = (process.env.BROWSER && window.devToolsExtension)
+  const isProduction = process.env.NODE_ENV === 'production'
+
+  const devTools = (process.env.BROWSER && window.devToolsExtension && !isProduction)
     ? window.devToolsExtension()
     : f => f
 
