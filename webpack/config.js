@@ -8,7 +8,8 @@ export default {
   entry: ['./src/client'],
 
   resolve: {
-    modulesDirectories: ['node_modules', 'src']
+    modules: ['src', 'node_modules'],
+    unsafeCache: true
   },
 
   loaders: [],

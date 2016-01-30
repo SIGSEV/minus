@@ -54,7 +54,7 @@
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.12",
+    "webpack": "^2.0.6-beta",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-hot-middleware": "^2.6.4",
     "webpack-stats-plugin": "^0.1.1"
