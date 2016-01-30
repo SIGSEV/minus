@@ -16,8 +16,13 @@ export default history => {
     ? window.devToolsExtension()
     : f => f
 
+  const perf = (process.env.BROWSER && !isProduction)
+    ? applyMiddleware(require('redux-perf-middleware').default)
+    : f => f
+
   const enhancers = compose(
     applyMiddleware(syncHistory(history), thunk),
+    perf,
     devTools
   )
 
