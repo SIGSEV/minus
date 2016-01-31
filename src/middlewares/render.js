@@ -37,7 +37,7 @@ export default (req, res) => {
 
     getPrefetchedData(components, locals).then(() => {
 
-      const app = (
+      const root = (
         <Provider store={store}>
           <Router history={history} routes={routes} />
         </Provider>
@@ -52,7 +52,7 @@ export default (req, res) => {
       const HtmlComponent = (
         <Html
           stats={stats}
-          content={renderToString(app)}
+          content={renderToString(root)}
           state={state} />
       )
 

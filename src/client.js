@@ -8,12 +8,12 @@ import routes from 'routes'
 
 const store = createStore(browserHistory)
 
-const rootComponent = (
+const root = (
   <Provider store={store}>
     <Router history={browserHistory} routes={routes} />
   </Provider>
 )
 
-const mountNode = document.getElementById('root')
+const rootNode = document.getElementById('root')
 
-render(rootComponent, mountNode)
+render(root, rootNode)
