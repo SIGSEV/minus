@@ -48,7 +48,7 @@
     "babel-eslint": "^5.0.0-beta8",
     "babel-plugin-react-transform": "^2.0.0",
     "eslint": "^1.10.3",
-    "eslint-config-zavatta": "^2.0.2",
+    "eslint-config-zavatta": "^2.0.3",
     "eslint-config-zavatta-react": "^1.2.0",
     "eslint-plugin-react": "^3.16.1",
     "nodemon": "^1.8.1",
