@@ -9,6 +9,6 @@ const param = process.argv[2]
 const target = launcher[param]
 
 if (target) {
-  require('babel-core/register')
+  require('babel-register')
   target()
 }
