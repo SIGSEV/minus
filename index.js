@@ -2,7 +2,7 @@ delete process.env.BROWSER
 
 const launcher = {
   '--app': () => require('./src/server'),
-  '--api': () => require('./src/dev-api')
+  '--api': () => require('./src/dev/api')
 }
 
 const param = process.argv[2]

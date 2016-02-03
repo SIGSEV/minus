@@ -3,18 +3,13 @@ import { syncHistory } from 'react-router-redux'
 import thunk from 'redux-thunk'
 
 import reducer from 'reducers'
+import devTools from 'dev/tools'
 
 export default history => {
 
   const initialState = (process.env.BROWSER)
     ? window.__INITIAL_STATE__
     : {}
-
-  const isProduction = process.env.NODE_ENV === 'production'
-
-  const devTools = (process.env.BROWSER && window.devToolsExtension && !isProduction)
-    ? window.devToolsExtension()
-    : f => f
 
   const enhancers = compose(
     applyMiddleware(syncHistory(history), thunk),
