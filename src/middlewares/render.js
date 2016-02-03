@@ -1,6 +1,6 @@
 import path from 'path'
 import React from 'react'
-import { getPrefetchedData } from 'react-fetcher'
+import { trigger } from 'redial'
 import { Provider } from 'react-redux'
 import { Router, match, createMemoryHistory } from 'react-router'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
@@ -35,7 +35,7 @@ export default (req, res) => {
 
     const components = renderProps.routes.map(route => route.component)
 
-    getPrefetchedData(components, locals).then(() => {
+    trigger('fetch', components, locals).then(() => {
 
       const root = (
         <Provider store={store}>
