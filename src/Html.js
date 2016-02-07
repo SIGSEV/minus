@@ -4,13 +4,13 @@ const Html = ({ content, state, stats: { style, main = 'bundle.js' } }) => (
   <html>
     <head>
 
-      <meta charSet='utf-8' />
-      <link rel='icon' href='assets/favicon.ico' type='image/x-icon' />
-
       <title>{'[::]'}</title>
 
+      <meta charSet='utf-8' />
+      <link rel='icon' href='/assets/favicon.ico' type='image/x-icon' />
+
       {style && (
-        <link href={`dist/${style}`} rel='stylesheet' />
+        <link href={`/dist/${style}`} rel='stylesheet' />
       )}
 
       {state && (
@@ -20,7 +20,7 @@ const Html = ({ content, state, stats: { style, main = 'bundle.js' } }) => (
     </head>
     <body>
       <div id='root' dangerouslySetInnerHTML={{ __html: content }} />
-      <script src={`dist/${main}`} />
+      <script src={`/dist/${main}`} />
     </body>
   </html>
 )
