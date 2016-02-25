@@ -3,6 +3,7 @@ import React from 'react'
 import { trigger } from 'redial'
 import { Provider } from 'react-redux'
 import { Router, match, createMemoryHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 
 import config from 'config'
@@ -14,15 +15,16 @@ import Html from 'Html'
 export default (req, res) => {
 
   const { url } = req
-  const history = createMemoryHistory(url)
-  const location = history.createLocation(url)
+  const memHistory = createMemoryHistory(url)
+  const location = memHistory.createLocation(url)
 
   match({ routes, location }, (err, redirectLocation, renderProps) => {
 
     if (err) { return res.status(500).end('internal server error') }
     if (!renderProps) { return res.status(404).end('not found') }
 
-    const store = createStore(history)
+    const store = createStore()
+    const history = syncHistoryWithStore(memHistory, store)
 
     const { dispatch } = store
 
