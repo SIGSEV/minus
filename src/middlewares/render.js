@@ -23,7 +23,7 @@ export default (req, res) => {
     if (err) { return res.status(500).end('internal server error') }
     if (!renderProps) { return res.status(404).end('not found') }
 
-    const store = createStore()
+    const store = createStore(memHistory)
     const history = syncHistoryWithStore(memHistory, store)
 
     const { dispatch } = store

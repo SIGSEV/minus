@@ -7,7 +7,7 @@ import { Router, browserHistory } from 'react-router'
 import createStore from 'createStore'
 import routes from 'routes'
 
-const store = createStore()
+const store = createStore(browserHistory)
 const history = syncHistoryWithStore(browserHistory, store)
 
 const root = (
