@@ -1,4 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
+import { routerMiddleware } from 'react-router-redux'
+import { browserHistory } from 'react-router'
 import thunk from 'redux-thunk'
 
 import reducer from 'reducers'
@@ -10,8 +12,11 @@ export default () => {
     ? window.__INITIAL_STATE__
     : {}
 
+  const routing = routerMiddleware(browserHistory)
+
   const enhancers = compose(
     applyMiddleware(thunk),
+    applyMiddleware(routing),
     devTools
   )
 
