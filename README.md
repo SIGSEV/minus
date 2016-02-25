@@ -1,4 +1,7 @@
 <p align="right">
+  <a href="http://starveller.sigsev.io/SIGSEV/minus">
+    <img src="http://starveller.sigsev.io/api/repos/SIGSEV/minus/badge">
+  </a>
   <a href="https://github.com/SIGSEV/minus">
     <img src="https://img.shields.io/badge/scaffold-minus-blue.svg?style=flat-square">
   </a>
