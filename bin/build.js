@@ -7,6 +7,7 @@ const bundler = webpack(webpackConfig)
 
 const progressPlugin = new ProgressPlugin((percentage, info) => {
   const msg = `${Math.round(percentage * 100)}% ${info}`
+  if (!process.stdout.isTTY) { return console.log(msg) }
   process.stdout.clearLine()
   process.stdout.cursorTo(0)
   process.stdout.write(msg)
