@@ -22,7 +22,7 @@
 
 ### Examples
 
-- Basic socket.io implementation: [example-sockets](https://github.com/SIGSEV/minus/tree/example-sockets)
+- Basic socket.io implementation: [patch](https://gist.github.com/Apercu/7eb5852845e3291f6958)
 
 ### Usage
 
