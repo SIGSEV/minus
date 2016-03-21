@@ -9,7 +9,7 @@
     "preview": "npm run build && npm run prod",
     "prod": "NODE_ENV=production npm run start:app",
     "start:app": "node index --app",
-    "start:api": "nodemon --watch src/api --watch src/config index -- --api",
+    "start:api": "node index --api",
     "start": "npm run start:app & npm run start:api & wait",
     "lint": "eslint src webpack bin"
   },
@@ -47,7 +47,7 @@
     "eslint-config-zavatta-react": "^1.2.3",
     "eslint-plugin-react": "^4.2.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "nodemon": "^1.9.1",
+    "piping": "^0.3.0",
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.2",
     "precss": "^1.4.0",

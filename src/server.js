@@ -3,7 +3,6 @@ import compression from 'compression'
 import bodyParser from 'body-parser'
 
 import config from 'config'
-import api from 'api'
 import render from 'middlewares/render'
 
 const server = express()
@@ -16,7 +15,7 @@ if (config.env === 'production') {
   server.use(compression())
   server.use(bodyParser.json())
   server.use('/dist', express.static(config.distFolder))
-  server.use(config.apiUrl, api)
+  server.use(config.apiUrl, require('api').default)
 }
 
 server.use('/assets', express.static(config.assetsFolder))
