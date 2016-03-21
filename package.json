@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "app-module-path": "^1.0.5",
-    "autoprefixer": "^6.3.3",
+    "autoprefixer": "^6.3.4",
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.2",
     "babel-eslint": "^5.0.0",
@@ -45,7 +45,7 @@
     "eslint": "2.2.0",
     "eslint-config-zavatta": "^3.0.1",
     "eslint-config-zavatta-react": "^1.2.3",
-    "eslint-plugin-react": "^4.2.1",
+    "eslint-plugin-react": "^4.2.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "piping": "^0.3.0",
     "postcss-import": "^8.0.2",
