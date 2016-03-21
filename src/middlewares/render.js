@@ -10,7 +10,7 @@ import config from 'config'
 import routes from 'routes'
 import createStore from 'createStore'
 
-import Html from 'Html'
+import Html from 'components/Html'
 
 export default (req, res) => {
 
