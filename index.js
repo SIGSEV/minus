@@ -1,24 +1,27 @@
+delete process.env.BROWSER
+
+require('babel-register')
+
 const path = require('path')
 const piping = require('piping')
+const appModulePath = require('app-module-path')
 
-delete process.env.BROWSER
+const config = require('./src/config').default
+
+appModulePath.addPath(path.join(__dirname, 'src'))
 
 const launcher = {
   '--app': () => require('./src/server'),
   '--api': () => require('./src/dev/api')
 }
 
-const isDev = process.env.NODE_ENV === 'development'
-const param = process.argv[2]
-const target = launcher[param]
-const src = path.join(__dirname, 'src')
-
 const pipingOpts = {
-  hook: true
+  hook: true,
+  ignore: /(actions|components|reducers|styles)\/.*/
 }
 
-if (target && (!isDev || piping(pipingOpts))) {
-  require('babel-register')
-  require('app-module-path').addPath(src)
-  target()
+const pipe = piping(pipingOpts)
+
+if (config.env !== 'development' || pipe) {
+  launcher[process.argv[2]]()
 }
