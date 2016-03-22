@@ -20,8 +20,6 @@ const pipingOpts = {
   ignore: /(actions|components|reducers|styles)\/.*/
 }
 
-const pipe = piping(pipingOpts)
-
-if (config.env !== 'development' || pipe) {
+if (config.env !== 'development' || piping(pipingOpts)) {
   launcher[process.argv[2]]()
 }
