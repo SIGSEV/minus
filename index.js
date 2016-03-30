@@ -1,6 +1,7 @@
 delete process.env.BROWSER
 
 require('babel-register')
+require('babel-polyfill')
 
 const path = require('path')
 const piping = require('piping')
