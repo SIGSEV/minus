@@ -12,6 +12,10 @@ import createStore from 'createStore'
 
 import Html from 'components/Html'
 
+const stats = (config.env === 'production')
+  ? require(path.join(config.distFolder, 'stats.json'))
+  : {}
+
 export default (req, res) => {
 
   const { url } = req
@@ -46,10 +50,6 @@ export default (req, res) => {
       )
 
       const state = store.getState()
-
-      const stats = (config.env === 'production')
-        ? require(path.join(config.distFolder, 'stats.json'))
-        : {}
 
       const HtmlComponent = (
         <Html
