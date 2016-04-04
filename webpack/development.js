@@ -8,7 +8,7 @@ import webpackConfig from './config'
 export default {
   ...webpackConfig,
 
-  devtool: 'sourcemap',
+  devtool: 'eval',
 
   entry: [
     ...webpackConfig.entry,
