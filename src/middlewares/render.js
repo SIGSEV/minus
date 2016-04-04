@@ -22,13 +22,13 @@ export default (req, res) => {
   const memHistory = createMemoryHistory(url)
   const location = memHistory.createLocation(url)
 
+  const store = createStore(memHistory)
+  const history = syncHistoryWithStore(memHistory, store)
+
   match({ routes, location }, (err, redirectLocation, renderProps) => {
 
     if (err) { return res.status(500).end('internal server error') }
     if (!renderProps) { return res.status(404).end('not found') }
-
-    const store = createStore(memHistory)
-    const history = syncHistoryWithStore(memHistory, store)
 
     const { dispatch } = store
 
@@ -39,7 +39,7 @@ export default (req, res) => {
       dispatch
     }
 
-    const components = renderProps.routes.map(route => route.component)
+    const { components } = renderProps
 
     trigger('fetch', components, locals).then(() => {
 
