@@ -2,6 +2,7 @@ import webpack from 'webpack'
 import path from 'path'
 
 const env = process.env.NODE_ENV || 'development'
+const dist = path.resolve(__dirname, '../dist')
 
 export default {
 
@@ -15,7 +16,7 @@ export default {
   loaders: [],
 
   output: {
-    path: path.join(__dirname, '../dist'),
+    path: dist,
     filename: 'bundle.js',
     publicPath: '/dist/'
   },
