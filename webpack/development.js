@@ -20,20 +20,7 @@ export default {
       test: /\.js$/,
       loader: 'babel',
       exclude: /node_modules/,
-      query: {
-        plugins: [
-          ['react-transform', {
-            transforms: [{
-              transform: 'react-transform-hmr',
-              imports: ['react'],
-              locals: ['module']
-            }, {
-              transform: 'react-transform-catch-errors',
-              imports: ['react', 'redbox-react']
-            }]
-          }]
-        ]
-      }
+      query: { presets: ['react-hmre'] }
     }, {
       test: /\.scss$/,
       loaders: ['style', 'css', 'postcss'],
