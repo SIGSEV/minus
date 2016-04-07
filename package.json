@@ -1,7 +1,6 @@
 {
-  "private": true,
-  "name": "minus",
-  "version": "1.5.1",
+  "name": "",
+  "version": "0.0.0",
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && npm run build:webpack",
@@ -57,5 +56,6 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0",
     "webpack-stats-plugin": "^0.1.1"
-  }
+  },
+  "private": true
 }
