@@ -7,13 +7,13 @@ const path = require('path')
 const piping = require('piping')
 const appModulePath = require('app-module-path')
 
-const config = require('./src/config').default
+const config = require('../src/config').default
 
-appModulePath.addPath(path.join(__dirname, 'src'))
+appModulePath.addPath(path.resolve(__dirname, '../src'))
 
 const launcher = {
-  '--app': () => require('./src/server'),
-  '--api': () => require('./src/dev/api')
+  '--app': () => require('../src/server'),
+  '--api': () => require('../src/dev/api')
 }
 
 const pipingOpts = {
