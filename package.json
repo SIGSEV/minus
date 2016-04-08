@@ -13,11 +13,20 @@
     "lint": "eslint src webpack bin"
   },
   "babel": {
-    "presets": ["react", "es2015", "stage-0"],
-    "plugins": ["transform-decorators-legacy"]
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-decorators-legacy"
+    ]
   },
   "eslintConfig": {
-    "extends": ["zavatta", "zavatta-react"]
+    "extends": [
+      "zavatta",
+      "zavatta-react"
+    ]
   },
   "dependencies": {
     "body-parser": "^1.15.0",
