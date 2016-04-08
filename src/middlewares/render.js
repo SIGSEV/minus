@@ -22,7 +22,7 @@ export default (req, res) => {
   const memHistory = createMemoryHistory(url)
   const location = memHistory.createLocation(url)
 
-  const store = createStore(memHistory)
+  const store = createStore(memHistory, {})
   const history = syncHistoryWithStore(memHistory, store)
 
   match({ routes, location }, (err, redirectLocation, renderProps) => {

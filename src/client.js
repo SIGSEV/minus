@@ -10,7 +10,7 @@ import routes from 'routes'
 
 import 'styles/main.scss'
 
-const store = createStore(browserHistory)
+const store = createStore(browserHistory, window.__INITIAL_STATE__)
 const history = syncHistoryWithStore(browserHistory, store)
 
 history.listen(location => {

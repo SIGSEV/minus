@@ -5,11 +5,7 @@ import thunk from 'redux-thunk'
 import reducer from 'reducers'
 import devTools from 'dev/tools'
 
-export default history => {
-
-  const initialState = (process.env.BROWSER)
-    ? window.__INITIAL_STATE__
-    : {}
+export default (history, initialState) => {
 
   const routing = routerMiddleware(history)
 
