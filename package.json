@@ -12,6 +12,13 @@
     "start": "npm run start:app & npm run start:api & wait",
     "lint": "eslint src webpack bin"
   },
+  "babel": {
+    "presets": ["react", "es2015", "stage-0"],
+    "plugins": ["transform-decorators-legacy"]
+  },
+  "eslintConfig": {
+    "extends": ["zavatta", "zavatta-react"]
+  },
   "dependencies": {
     "body-parser": "^1.15.0",
     "compression": "^1.6.1",
