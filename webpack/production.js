@@ -31,14 +31,11 @@ export default {
   plugins: [
     ...webpackConfig.plugins,
 
-    // extract styles
     new ExtractTextPlugin('styles-[hash].css'),
 
-    // optimizations
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
 
-    // write stats
     new StatsWriterPlugin({
       transform: data => JSON.stringify({
         main: data.assetsByChunkName.main[0],
