@@ -8,7 +8,7 @@ export default {
   env,
   port: 3000,
 
-  assetsFolder: path.join(__dirname, '../assets'),
+  assetsFolder: path.join(__dirname, '../client/assets'),
   distFolder: path.join(__dirname, '../../dist'),
 
   ...config

@@ -5,10 +5,10 @@ import { trigger } from 'redial'
 import { Provider } from 'react-redux'
 import { Router, browserHistory, match } from 'react-router'
 
-import createStore from 'createStore'
-import routes from 'routes'
+import createStore from 'core/store'
+import routes from 'core/routes'
 
-import 'styles/main.scss'
+import 'client/styles/main.scss'
 
 const store = createStore(browserHistory, window.__INITIAL_STATE__)
 const history = syncHistoryWithStore(browserHistory, store)

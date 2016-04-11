@@ -3,12 +3,12 @@ import compression from 'compression'
 import bodyParser from 'body-parser'
 
 import config from 'config'
-import render from 'middlewares/render'
+import render from 'server/middlewares/render'
 
 const server = express()
 
 if (config.env === 'development') {
-  require('dev/server').default(server)
+  require('server/middlewares/webpack').default(server)
 }
 
 if (config.env === 'production') {
