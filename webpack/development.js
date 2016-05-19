@@ -1,8 +1,5 @@
 import webpack from 'webpack'
 import path from 'path'
-import precss from 'precss'
-import autoprefixer from 'autoprefixer'
-import postcssImport from 'postcss-import'
 
 import webpackConfig from './config'
 
@@ -30,8 +27,6 @@ export default {
       include: src
     }]
   },
-
-  postcss: wp => [postcssImport({ addDependencyTo: wp }), precss, autoprefixer],
 
   plugins: [
     ...webpackConfig.plugins,

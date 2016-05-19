@@ -1,5 +1,8 @@
 import webpack from 'webpack'
 import path from 'path'
+import precss from 'precss'
+import autoprefixer from 'autoprefixer'
+import postcssImport from 'postcss-import'
 
 const env = process.env.NODE_ENV || 'development'
 const dist = path.resolve(__dirname, '../dist')
@@ -20,6 +23,8 @@ export default {
     filename: 'bundle.js',
     publicPath: '/dist/'
   },
+
+  postcss: wp => [postcssImport({ addDependencyTo: wp }), precss, autoprefixer],
 
   plugins: [
 

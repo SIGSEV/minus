@@ -1,8 +1,6 @@
 import webpack from 'webpack'
 import { StatsWriterPlugin } from 'webpack-stats-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import precss from 'precss'
-import autoprefixer from 'autoprefixer'
 
 import webpackConfig from './config'
 
@@ -25,8 +23,6 @@ export default {
       exclude: /node_modules/
     }]
   },
-
-  postcss: () => [precss, autoprefixer],
 
   plugins: [
     ...webpackConfig.plugins,
