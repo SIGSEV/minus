@@ -64,6 +64,7 @@
     "eslint-config-zavatta-react": "^1.2.3",
     "eslint-plugin-react": "^5.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "ignore-styles": "^3.0.0",
     "piping": "^1.0.0-rc.2",
     "postcss-import": "8.1.0",
     "postcss-loader": "^0.9.1",
