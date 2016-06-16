@@ -33,7 +33,6 @@
     "compression": "^1.6.2",
     "express": "^4.13.4",
     "lodash": "^4.13.1",
-    "postcss-import": "^8.0.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
