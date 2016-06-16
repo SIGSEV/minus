@@ -64,7 +64,7 @@
     "eslint-plugin-react": "^5.1.1",
     "express-http-proxy": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "ignore-styles": "^3.0.0",
+    "ignore-styles": "^4.0.0",
     "piping": "^1.0.0-rc.2",
     "postcss-import": "8.1.0",
     "postcss-loader": "^0.9.1",
