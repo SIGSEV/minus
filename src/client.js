@@ -8,7 +8,7 @@ import { Router, browserHistory, match } from 'react-router'
 import createStore from 'core/store'
 import routes from 'core/routes'
 
-import 'client/styles/main.scss'
+import 'styles/main.scss'
 
 const store = createStore(browserHistory, window.__INITIAL_STATE__)
 const history = syncHistoryWithStore(browserHistory, store)
