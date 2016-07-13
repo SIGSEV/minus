@@ -36,7 +36,7 @@ export default (req, res) => {
       path: renderProps.location.pathname,
       query: renderProps.location.query,
       params: renderProps.params,
-      dispatch
+      dispatch,
     }
 
     const { components } = renderProps

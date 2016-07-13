@@ -10,7 +10,7 @@ export default server => {
 
   const devMiddlewareConfig = {
     noInfo: true,
-    publicPath: webpackConfig.output.publicPath
+    publicPath: webpackConfig.output.publicPath,
   }
 
   server.use(webpackDevMiddleware(compiler, devMiddlewareConfig))

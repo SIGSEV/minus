@@ -21,7 +21,7 @@ history.listen(location => {
       path: renderProps.location.pathname,
       query: renderProps.location.query,
       params: renderProps.params,
-      dispatch: store.dispatch
+      dispatch: store.dispatch,
     }
 
     const { components } = renderProps

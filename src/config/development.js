@@ -1,3 +1,3 @@
 export default {
-  apiPort: 3001
+  apiPort: 3001,
 }
