@@ -1,7 +1,6 @@
 import express from 'express'
 import compression from 'compression'
 import bodyParser from 'body-parser'
-import proxy from 'express-http-proxy'
 
 import config from 'config'
 import render from 'server/middlewares/render'
@@ -10,7 +9,6 @@ const server = express()
 
 if (config.env === 'development') {
   require('server/middlewares/webpack').default(server)
-  server.use(config.apiUrl, proxy(`http://localhost:${config.apiPort}`))
 }
 
 if (config.env === 'production') {

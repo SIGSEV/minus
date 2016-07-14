@@ -62,7 +62,6 @@
     "eslint-config-zavatta": "^4.1.0",
     "eslint-config-zavatta-react": "^2.0.0",
     "eslint-plugin-react": "^5.2.2",
-    "express-http-proxy": "^0.7.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "ignore-styles": "^4.0.0",
     "piping": "^0.3.1",
