@@ -68,6 +68,7 @@
     "postcss-import": "8.1.0",
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
+    "progress-bar-webpack-plugin": "^1.8.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.4",
     "webpack-dev-middleware": "^1.6.1",
