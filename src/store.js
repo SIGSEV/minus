@@ -2,8 +2,8 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 
-import reducer from 'core/reducers'
-import devTools from 'core/middlewares/dev-tools'
+import reducer from 'reducers'
+import devTools from 'middlewares/dev-tools'
 
 export default (history, initialState) => {
 

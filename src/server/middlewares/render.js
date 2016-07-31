@@ -7,10 +7,10 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 
 import config from 'config'
-import routes from 'core/routes'
-import createStore from 'core/store'
+import routes from 'routes'
+import createStore from 'store'
 
-import Html from 'core/components/Html'
+import Html from 'components/Html'
 
 const stats = (config.env === 'production')
   ? require(path.join(config.distFolder, 'stats.json'))

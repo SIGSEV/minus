@@ -5,8 +5,8 @@ import { trigger } from 'redial'
 import { Provider } from 'react-redux'
 import { Router, browserHistory, match } from 'react-router'
 
-import createStore from 'core/store'
-import routes from 'core/routes'
+import createStore from 'store'
+import routes from 'routes'
 
 import 'styles/main.scss'
 
