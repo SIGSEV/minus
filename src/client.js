@@ -13,9 +13,10 @@ import 'styles/main.scss'
 const store = createStore(browserHistory, window.__INITIAL_STATE__)
 const history = syncHistoryWithStore(browserHistory, store)
 
-history.listen(location => {
-
+const matchRoutes = location =>
   match({ routes, location }, (error, redirectLocation, renderProps) => {
+
+    if (redirectLocation) { return matchRoutes(redirectLocation) }
 
     const locals = {
       path: renderProps.location.pathname,
@@ -33,7 +34,8 @@ history.listen(location => {
     }
 
   })
-})
+
+history.listen(matchRoutes)
 
 const root = (
   <Provider store={store}>

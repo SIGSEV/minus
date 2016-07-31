@@ -28,6 +28,7 @@ export default (req, res) => {
   match({ routes, location }, (err, redirectLocation, renderProps) => {
 
     if (err) { return res.status(500).end('internal server error') }
+    if (redirectLocation) { return res.redirect(redirectLocation.pathname) }
     if (!renderProps) { return res.status(404).end('not found') }
 
     const { dispatch } = store
