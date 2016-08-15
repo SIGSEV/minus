@@ -7,7 +7,7 @@ import render from 'server/render'
 const server = express()
 
 if (config.env === 'development') {
-  require('server/middlewares/webpack').default(server)
+  require('./webpack').default(server)
 }
 
 if (config.env === 'production') {
