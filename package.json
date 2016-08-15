@@ -7,9 +7,7 @@
     "build:webpack": "NODE_ENV=production babel-node bin/build",
     "preview": "npm run build && npm run prod",
     "prod": "NODE_ENV=production npm run start:app",
-    "start:app": "node bin/start --app",
-    "start:api": "node bin/start --api",
-    "start": "npm run start:app & npm run start:api & wait",
+    "start": "node bin/start",
     "lint": "eslint src webpack bin"
   },
   "babel": {
@@ -64,7 +62,6 @@
     "eslint-plugin-react": "^6.1.0",
     "extract-text-webpack-plugin": "^2.0.0-beta",
     "ignore-styles": "^4.0.0",
-    "piping": "^0.3.1",
     "postcss-import": "8.1.0",
     "postcss-loader": "^0.10.0",
     "precss": "^1.4.0",

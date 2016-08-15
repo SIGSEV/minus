@@ -17,7 +17,6 @@
 - Fully linted, with large amount of [eslint](https://github.com/eslint/eslint) rules
 - Happy developer experience:
   - Client hot reloading for **components**, **styles**, **actions** and **reducers**
-  - Server hot reloading using [piping](https://github.com/mdlawson/piping)
   - Out-of-the-box support of [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension)
   - Ready to use build system, with assets renaming and optimizations
 
