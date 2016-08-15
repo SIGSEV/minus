@@ -13,7 +13,6 @@ if (config.env === 'development') {
 if (config.env === 'production') {
   server.use(compression())
   server.use('/dist', express.static(config.distFolder))
-  server.use(config.apiUrl, require('api').default)
 }
 
 server.use('/assets', express.static(config.assetsFolder))
