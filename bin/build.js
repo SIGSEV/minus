@@ -1,6 +1,6 @@
 import webpack from 'webpack'
 
-import webpackConfig from '../webpack/production'
+import webpackConfig from '../webpack/build'
 
 const bundler = webpack(webpackConfig)
 

@@ -2,7 +2,7 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
-import webpackConfig from '../../webpack/development'
+import webpackConfig from '../../webpack/dev'
 
 export default server => {
 
