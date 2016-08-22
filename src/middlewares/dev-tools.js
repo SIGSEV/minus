@@ -1,5 +1,3 @@
-const isProduction = process.env.NODE_ENV === 'production'
-
-export default (process.env.BROWSER && window.devToolsExtension && !isProduction)
+export default (process.env.BROWSER && window.devToolsExtension)
   ? window.devToolsExtension()
   : f => f

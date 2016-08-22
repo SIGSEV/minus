@@ -52,14 +52,14 @@ export default (req, res) => {
 
       const state = store.getState()
 
-      const HtmlComponent = (
+      const markup = renderToStaticMarkup(
         <Html
           stats={stats}
+          state={state}
           content={renderToString(root)}
-          state={state} />
+        />
       )
 
-      const markup = renderToStaticMarkup(HtmlComponent)
       const page = `<!doctype html>${markup}`
 
       res.end(page)
