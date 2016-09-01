@@ -12,11 +12,6 @@ export default {
 
   entry: ['./src/client'],
 
-  resolve: {
-    modules: ['src', 'node_modules'],
-    unsafeCache: true,
-  },
-
   loaders: [],
 
   output: {
