@@ -16,7 +16,7 @@ export default {
   ],
 
   module: {
-    loaders: [...webpackConfig.loaders, {
+    loaders: [{
       test: /\.js$/,
       loader: 'babel',
       include: src,

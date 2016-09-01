@@ -12,8 +12,6 @@ export default {
 
   entry: ['./src/client'],
 
-  loaders: [],
-
   output: {
     path: dist,
     filename: 'bundle.js',
