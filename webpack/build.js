@@ -32,6 +32,7 @@ export default {
 
     new ExtractTextPlugin('styles-[hash].css'),
 
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
 
