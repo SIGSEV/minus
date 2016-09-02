@@ -1,6 +1,7 @@
 import webpack from 'webpack'
 import { StatsWriterPlugin } from 'webpack-stats-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 
 import webpackConfig from './config'
 
@@ -42,6 +43,8 @@ export default {
         style: data.assetsByChunkName.main[1],
       }),
     }),
+
+    new ProgressBarPlugin(),
 
   ],
 

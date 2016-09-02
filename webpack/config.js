@@ -3,7 +3,6 @@ import path from 'path'
 import precss from 'precss'
 import autoprefixer from 'autoprefixer'
 import postcssImport from 'postcss-import'
-import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 
 const env = process.env.NODE_ENV || 'development'
 const dist = path.resolve(__dirname, '../dist')
@@ -28,8 +27,6 @@ export default {
         BROWSER: JSON.stringify(true),
       },
     }),
-
-    new ProgressBarPlugin(),
 
   ],
 
