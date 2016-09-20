@@ -22,7 +22,7 @@ export default {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract({
         fallbackLoader: 'style',
-        loader: 'css!postcss',
+        loader: 'css!sass!autoprefixer',
       }),
       exclude: /node_modules/,
     }],
@@ -47,8 +47,6 @@ export default {
     new ProgressBarPlugin(),
 
   ],
-
-  progress: true,
 
   stats: {
     colors: true,

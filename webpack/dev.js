@@ -23,7 +23,7 @@ export default {
       query: { presets: ['react-hmre'] },
     }, {
       test: /\.scss$/,
-      loaders: ['style', 'css', 'postcss'],
+      loaders: ['style', 'css', 'sass', 'autoprefixer'],
       include: src,
     }],
   },
