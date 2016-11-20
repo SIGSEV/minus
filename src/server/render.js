@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { Router, match, createMemoryHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
+import promisify from 'es6-promisify'
 
 import config from 'config'
 import routes from 'routes'
@@ -16,18 +17,20 @@ const stats = (config.env === 'production')
   ? require(path.join(config.distFolder, 'stats.json'))
   : {}
 
-export default (req, res) => {
+const matchRoutes = promisify(match, { multiArgs: true })
 
-  const { url } = req
-  const memHistory = createMemoryHistory(url)
-  const location = memHistory.createLocation(url)
+async function render (req, res) {
+  try {
 
-  const store = createStore(memHistory, {})
-  const history = syncHistoryWithStore(memHistory, store)
+    const { url } = req
+    const memHistory = createMemoryHistory(url)
+    const location = memHistory.createLocation(url)
 
-  match({ routes, location }, (err, redirectLocation, renderProps) => {
+    const store = createStore(memHistory, {})
+    const history = syncHistoryWithStore(memHistory, store)
 
-    if (err) { return res.status(500).end('internal server error') }
+    const [redirectLocation, renderProps] = await matchRoutes({ routes, location })
+
     if (redirectLocation) { return res.redirect(redirectLocation.pathname) }
     if (!renderProps) { return res.status(404).end('not found') }
 
@@ -42,29 +45,27 @@ export default (req, res) => {
 
     const { components } = renderProps
 
-    trigger('fetch', components, locals).then(() => {
+    await trigger('fetch', components, locals)
 
-      const root = (
-        <Provider store={store}>
-          <Router history={history} routes={routes} />
-        </Provider>
-      )
+    const root = (
+      <Provider store={store}>
+        <Router history={history} routes={routes} />
+      </Provider>
+    )
 
-      const state = store.getState()
+    const markup = renderToStaticMarkup(
+      <Html
+        stats={stats}
+        state={store.getState()}
+        content={renderToString(root)}
+      />
+    )
 
-      const markup = renderToStaticMarkup(
-        <Html
-          stats={stats}
-          state={state}
-          content={renderToString(root)}
-        />
-      )
+    const page = `<!doctype html>${markup}`
 
-      const page = `<!doctype html>${markup}`
+    res.end(page)
 
-      res.end(page)
-
-    }).catch(err => res.status(500).send(err.stack))
-  })
-
+  } catch (err) { res.status(500).send(err.stack) }
 }
+
+export default render
