@@ -18,12 +18,12 @@ export default {
   module: {
     loaders: [{
       test: /\.js$/,
-      loader: 'babel',
+      loader: 'babel-loader',
       include: src,
       query: { presets: ['react-hmre'] },
     }, {
       test: /\.scss$/,
-      loaders: ['style', 'css', 'sass', 'autoprefixer'],
+      loaders: ['style-loader', 'css-loader', 'sass-loader', 'autoprefixer-loader'],
       include: src,
     }],
   },

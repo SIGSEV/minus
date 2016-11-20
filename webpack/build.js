@@ -16,13 +16,13 @@ export default {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loaders: ['babel-loader'],
       exclude: /node_modules/,
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style',
-        loader: ['css', 'sass', 'autoprefixer'],
+        fallbackLoader: 'style-loader',
+        loader: ['css-loader', 'sass-loader', 'autoprefixer-loader'],
       }),
       exclude: /node_modules/,
     }],
@@ -34,7 +34,6 @@ export default {
     new ExtractTextPlugin('styles-[hash].css'),
 
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
 
     new StatsWriterPlugin({
