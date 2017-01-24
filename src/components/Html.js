@@ -1,4 +1,5 @@
 import React from 'react'
+import serialize from 'serialize-javascript'
 
 const Html = ({ content, state, stats: { style, main = 'bundle.js' } }) => (
   <html>
@@ -11,7 +12,7 @@ const Html = ({ content, state, stats: { style, main = 'bundle.js' } }) => (
 
       {style && <link href={`/dist/${style}`} rel='stylesheet' />}
 
-      <script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${JSON.stringify(state)}` }} />
+      <script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${serialize(state)}` }} />
 
     </head>
     <body>
