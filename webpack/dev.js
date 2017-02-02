@@ -31,7 +31,7 @@ export default {
   plugins: [
     ...webpackConfig.plugins,
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
 
 }
