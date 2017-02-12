@@ -69,7 +69,7 @@
     "eslint-config-zavatta": "^4.2.0",
     "eslint-config-zavatta-react": "^2.1.1",
     "eslint-plugin-react": "^6.9.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "2.0.0-rc.3",
     "ignore-styles": "^5.0.1",
     "node-sass": "^4.5.0",
     "progress-bar-webpack-plugin": "^1.9.3",

@@ -21,7 +21,7 @@ export default {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
+        fallback: 'style-loader',
         loader: ['css-loader', 'sass-loader', 'autoprefixer-loader'],
       }),
       exclude: /node_modules/,
