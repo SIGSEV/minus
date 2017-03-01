@@ -16,7 +16,7 @@ export default {
   ],
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
       loader: 'babel-loader',
       include: src,

@@ -14,9 +14,9 @@ export default {
   },
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
-      loaders: ['babel-loader'],
+      loader: 'babel-loader',
       exclude: /node_modules/,
     }, {
       test: /\.scss$/,
