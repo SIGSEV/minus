@@ -1,9 +1,8 @@
 import webpack from 'webpack'
 import { StatsWriterPlugin } from 'webpack-stats-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 
-import webpackConfig from './config'
+import webpackConfig from './base'
 
 export default {
   ...webpackConfig,
@@ -16,13 +15,13 @@ export default {
   module: {
     rules: [{
       test: /\.js$/,
-      loader: 'babel-loader',
+      use: 'babel-loader',
       exclude: /node_modules/,
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract({
+      use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        loader: ['css-loader', 'sass-loader', 'autoprefixer-loader'],
+        use: ['css-loader', 'sass-loader', 'autoprefixer-loader'],
       }),
       exclude: /node_modules/,
     }],
@@ -34,16 +33,30 @@ export default {
     new ExtractTextPlugin('styles-[hash].css'),
 
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        screw_ie8: true, // eslint-disable-line
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true, // eslint-disable-line
+        evaluate: true,
+        if_return: true, // eslint-disable-line
+        join_vars: true, // eslint-disable-line
+      },
+      output: {
+        comments: false,
+      },
+    }),
 
     new StatsWriterPlugin({
       transform: data => JSON.stringify({
         main: data.assetsByChunkName.main[0],
-        style: data.assetsByChunkName.main[1],
+        styles: data.assetsByChunkName.main[1],
       }),
     }),
-
-    new ProgressBarPlugin(),
 
   ],
 

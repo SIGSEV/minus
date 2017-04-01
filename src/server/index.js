@@ -18,9 +18,6 @@ if (config.env === 'production') {
 server.use('/assets', express.static(config.assetsFolder))
 server.use(render)
 
-server.listen(config.port, 'localhost', err => {
-  /* eslint-disable no-console */
-  if (err) { return console.log(err) }
-  console.log(`[APP] listening at localhost:${config.port} in ${config.env} mode`)
-  /* eslint-enable no-console */
+server.listen(config.port, 'localhost', () => {
+  console.log(`> http://localhost:${config.port} - ${config.env}`) // eslint-disable-line
 })

@@ -1,15 +1,12 @@
 import webpack from 'webpack'
 import path from 'path'
 
-const env = process.env.NODE_ENV || 'development'
-const dist = path.resolve(__dirname, '../dist')
-
 export default {
 
   entry: ['./src/client'],
 
   output: {
-    path: dist,
+    path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
     publicPath: '/dist/',
   },
@@ -18,8 +15,8 @@ export default {
 
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(env),
-        BROWSER: JSON.stringify(true),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+        __BROWSER__: JSON.stringify(true),
       },
     }),
 

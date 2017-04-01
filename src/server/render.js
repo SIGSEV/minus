@@ -1,15 +1,15 @@
-import path from 'path'
-import React from 'react'
-import { trigger } from 'redial'
-import { Provider } from 'react-redux'
+import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 import { Router, match, createMemoryHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import { renderToString, renderToStaticMarkup } from 'react-dom/server'
+import { Provider } from 'react-redux'
 import promisify from 'es6-promisify'
+import { trigger } from 'redial'
+import React from 'react'
+import path from 'path'
 
+import createStore from 'store'
 import config from 'config'
 import routes from 'routes'
-import createStore from 'store'
 
 import Html from 'components/Html'
 

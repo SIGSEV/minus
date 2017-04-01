@@ -3,7 +3,10 @@ import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 
 import reducer from 'reducers'
-import devTools from 'middlewares/dev-tools'
+
+const devTools = (process.env.__BROWSER__ && window.devToolsExtension)
+  ? window.devToolsExtension()
+  : f => f
 
 export default (history, initialState) => {
 
@@ -11,7 +14,7 @@ export default (history, initialState) => {
 
   const enhancers = compose(
     applyMiddleware(thunk, routing),
-    devTools
+    devTools,
   )
 
   const store = createStore(reducer, initialState, enhancers)

@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
 
-import webpackConfig from './config'
+import webpackConfig from './base'
 
 const src = path.resolve(__dirname, '../src')
 
@@ -23,7 +23,7 @@ export default {
       query: { presets: ['react-hmre'] },
     }, {
       test: /\.scss$/,
-      loaders: ['style-loader', 'css-loader', 'sass-loader', 'autoprefixer-loader'],
+      use: ['style-loader', 'css-loader', 'sass-loader', 'autoprefixer-loader'],
       include: src,
     }],
   },
