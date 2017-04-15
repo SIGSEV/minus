@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Switch, Route } from 'react-router'
+import { Provider } from 'react-redux'
 
-class App extends Component {
+import routes from 'routes'
 
-  render () {
-    return (
-      <div>
-        {this.props.children}
-      </div>
-    )
-  }
-
-}
-
-export default App
+export default (store, Router, routerProps) => (
+  <Provider store={store}>
+    <Router {...routerProps}>
+      <Switch>
+        {routes.map(route => <Route key={route.path} {...route} />)}
+      </Switch>
+    </Router>
+  </Provider>
+)

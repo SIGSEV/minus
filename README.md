@@ -42,3 +42,23 @@ npm run prod
 ```
 
 If you want to see more commands, just read the fucking `package.json`.
+
+### SSR data loading
+
+To do async operations before SSR, you can define a `load` prop on your
+route object, which receive the store and returns a Promise.
+
+```javascript
+// src/routes.js
+
+export default [
+  ...
+  {
+    path: '/foo-route',
+    component: FooComponent,
+    load: async ({ dispatch, getState}) => {
+      // do whatever you want.
+    }
+  }
+]
+```

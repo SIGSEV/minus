@@ -1,59 +1,35 @@
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
-import { Router, match, createMemoryHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
-import { Provider } from 'react-redux'
-import promisify from 'es6-promisify'
-import { trigger } from 'redial'
+import { StaticRouter } from 'react-router'
+import { matchPath } from 'react-router-dom'
 import React from 'react'
-import path from 'path'
 
-import createStore from 'store'
-import config from 'config'
 import routes from 'routes'
+import createStore from 'store'
 
 import Html from 'components/Html'
+import App from 'components/App'
 
-const stats = (config.env === 'production')
-  ? require(path.join(config.distFolder, 'stats.json'))
-  : {}
-
-const matchRoutes = promisify(match, { multiArgs: true })
-
-async function render (req, res) {
+export default stats => async (req, res) => {
   try {
 
-    const { url } = req
-    const memHistory = createMemoryHistory(url)
-    const location = memHistory.createLocation(url)
+    const store = createStore()
 
-    const store = createStore(memHistory, {})
-    const history = syncHistoryWithStore(memHistory, store)
+    const context = {}
+    const promises = []
 
-    const [redirectLocation, renderProps] = await matchRoutes({ routes, location })
+    routes.some(route => {
+      const match = matchPath(req.url, route)
+      if (match && route.load) {
+        promises.push(route.load(store))
+      }
+      return match
+    })
 
-    if (redirectLocation) { return res.redirect(redirectLocation.pathname) }
-    if (!renderProps) { return res.status(404).end('not found') }
+    await Promise.all(promises)
 
-    const { dispatch } = store
+    const root = App(store, StaticRouter, { location: req.url, context })
 
-    const locals = {
-      path: renderProps.location.pathname,
-      query: renderProps.location.query,
-      params: renderProps.params,
-      dispatch,
-    }
-
-    const { components } = renderProps
-
-    await trigger('fetch', components, locals)
-
-    const root = (
-      <Provider store={store}>
-        <Router history={history} routes={routes} />
-      </Provider>
-    )
-
-    const markup = renderToStaticMarkup(
+    const page = (
       <Html
         stats={stats}
         state={store.getState()}
@@ -61,11 +37,7 @@ async function render (req, res) {
       />
     )
 
-    const page = `<!doctype html>${markup}`
-
-    res.end(page)
+    res.end(`<!doctype html>${renderToStaticMarkup(page)}`)
 
   } catch (err) { res.status(500).send(err.stack) }
 }
-
-export default render

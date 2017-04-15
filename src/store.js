@@ -10,10 +10,13 @@ const devTools = (process.env.__BROWSER__ && window.devToolsExtension)
 
 export default (history, initialState) => {
 
-  const routing = routerMiddleware(history)
+  const middlewares = [
+    routerMiddleware(history),
+    thunk,
+  ]
 
   const enhancers = compose(
-    applyMiddleware(thunk, routing),
+    applyMiddleware(...middlewares),
     devTools,
   )
 
