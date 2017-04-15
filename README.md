@@ -25,21 +25,15 @@
 
 Launch the dev environment:
 
-```
-npm start
-```
+    npm start
 
 Launch the build:
 
-```
-npm run build
-```
+    npm run build
 
 Launch the app in prod mode:
 
-```
-npm run prod
-```
+    npm run prod
 
 If you want to see more commands, just read the fucking `package.json`.
 
@@ -48,7 +42,7 @@ If you want to see more commands, just read the fucking `package.json`.
 To do async operations before SSR, you can define a `load` prop on your
 route object, which receive the store and returns a Promise.
 
-```javascript
+```js
 // src/routes.js
 
 export default [
@@ -56,7 +50,7 @@ export default [
   {
     path: '/foo-route',
     component: FooComponent,
-    load: async ({ dispatch, getState}) => {
+    load: async ({ dispatch, getState }) => {
       // do whatever you want.
     }
   }
