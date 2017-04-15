@@ -10,7 +10,6 @@ import 'styles/main.scss'
 
 const history = createHistory()
 const store = createStore(history, window.__INITIAL_STATE__)
-
 const root = App(store, ConnectedRouter, { history })
 
 render(root, document.getElementById('root'))
