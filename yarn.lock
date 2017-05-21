@@ -1743,13 +1743,13 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-zavatta-react@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-zavatta-react/-/eslint-config-zavatta-react-2.1.1.tgz#00a2121030aec57e90b7d22be7f728b935433afb"
+eslint-config-zavatta-react@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-zavatta-react/-/eslint-config-zavatta-react-2.2.1.tgz#8e542126785082eb475dda128b57cf117f0b3efc"
 
-eslint-config-zavatta@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-zavatta/-/eslint-config-zavatta-4.3.0.tgz#047ee7b9c78300bbb5ad0a6fe791baf23db8f363"
+eslint-config-zavatta@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-zavatta/-/eslint-config-zavatta-4.4.1.tgz#1602fcef93c092802d5ac42a85d9c83d972fe393"
 
 eslint-plugin-react@^7.0.1:
   version "7.0.1"
