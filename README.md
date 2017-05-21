@@ -13,7 +13,7 @@
 - **No. Fucking. Bullshit.** Just the code.
 - **100%** ES6/ES7
 - **100%** isomorphic — page is rendered server side for initial load
-- Use [React](https://github.com/facebook/react), [Redux](https://github.com/rackt/redux), [react-router](https://github.com/rackt/react-router) and [redial](https://github.com/markdalgleish/redial) for data-fetching
+- Use [React](https://github.com/facebook/react), [Redux](https://github.com/rackt/redux), [react-router](https://github.com/rackt/react-router)
 - Fully linted, with large amount of [eslint](https://github.com/eslint/eslint) rules
 - Sass support
 - Happy developer experience:
