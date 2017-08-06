@@ -4,6 +4,7 @@
   "scripts": {
     "start": "node -r babel-register -r babel-polyfill -r ignore-styles src/server",
     "lint": "eslint src webpack bin",
+    "prettier": "prettier --print-width 100 --single-quote --trailing-comma all --no-semi --write \"{src,webpack}/**/*.?(js|?(s)css|json)\"",
     "build": "rm -rf dist && NODE_ENV=production webpack --progress --hide-modules --config webpack/build.babel.js",
     "prod": "NODE_ENV=production npm start"
   },
@@ -37,11 +38,13 @@
     "babel-register": "^6.24.1",
     "css-loader": "^0.28.4",
     "eslint": "^4.4.0",
+    "eslint-config-prettier": "^2.3.0",
     "eslint-config-zavatta": "^6.0.1",
     "eslint-config-zavatta-react": "^2.2.2",
     "extract-text-webpack-plugin": "^3.0.0",
     "ignore-styles": "^5.0.1",
     "node-sass": "^4.5.3",
+    "prettier": "^1.5.3",
     "react-hot-loader": "^3.0.0-beta.7",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",

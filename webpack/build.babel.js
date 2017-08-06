@@ -45,10 +45,11 @@ export default {
       },
     }),
     new StatsWriterPlugin({
-      transform: data => JSON.stringify({
-        main: data.assetsByChunkName.main[0],
-        styles: data.assetsByChunkName.main[1],
-      }),
+      transform: data =>
+        JSON.stringify({
+          main: data.assetsByChunkName.main[0],
+          styles: data.assetsByChunkName.main[1],
+        }),
     }),
   ],
   stats: {

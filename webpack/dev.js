@@ -5,11 +5,7 @@ import webpackConfig from './base'
 export default {
   ...webpackConfig,
   devtool: 'eval',
-  entry: [
-    'react-hot-loader/patch',
-    ...webpackConfig.entry,
-    'webpack-hot-middleware/client',
-  ],
+  entry: ['react-hot-loader/patch', ...webpackConfig.entry, 'webpack-hot-middleware/client'],
   module: {
     rules: [
       ...webpackConfig.module.rules,

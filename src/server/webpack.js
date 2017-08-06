@@ -5,7 +5,6 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackConfig from '../../webpack/dev'
 
 export default server => {
-
   const compiler = webpack(webpackConfig)
 
   const devMiddlewareConfig = {
@@ -15,5 +14,4 @@ export default server => {
 
   server.use(webpackDevMiddleware(compiler, devMiddlewareConfig))
   server.use(webpackHotMiddleware(compiler))
-
 }

@@ -4,21 +4,13 @@ import thunk from 'redux-thunk'
 
 import reducer from 'reducers'
 
-const devTools = (process.env.__BROWSER__ && window.devToolsExtension)
-  ? window.devToolsExtension()
-  : f => f
+const devTools =
+  process.env.__BROWSER__ && window.devToolsExtension ? window.devToolsExtension() : f => f
 
 export default (history, initialState) => {
+  const middlewares = [routerMiddleware(history), thunk]
 
-  const middlewares = [
-    routerMiddleware(history),
-    thunk,
-  ]
-
-  const enhancers = compose(
-    applyMiddleware(...middlewares),
-    devTools,
-  )
+  const enhancers = compose(applyMiddleware(...middlewares), devTools)
 
   const store = createStore(reducer, initialState, enhancers)
 
@@ -30,5 +22,4 @@ export default (history, initialState) => {
   }
 
   return store
-
 }

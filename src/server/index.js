@@ -7,9 +7,7 @@ import render from 'server/render'
 
 const server = express()
 
-const stats = (config.env === 'production')
-  ? require(path.join(config.distFolder, 'stats.json'))
-  : {}
+const stats = config.env === 'production' ? require(path.join(config.distFolder, 'stats.json')) : {}
 
 if (config.env === 'development') {
   require('./webpack')(server)
