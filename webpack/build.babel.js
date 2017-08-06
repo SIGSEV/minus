@@ -6,32 +6,26 @@ import webpackConfig from './base'
 
 export default {
   ...webpackConfig,
-
   output: {
     ...webpackConfig.output,
     filename: 'bundle-[hash].js',
   },
-
   module: {
-    rules: [{
-      test: /\.js$/,
-      use: 'babel-loader',
-      exclude: /node_modules/,
-    }, {
-      test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: ['css-loader', 'sass-loader', 'autoprefixer-loader'],
-      }),
-      exclude: /node_modules/,
-    }],
+    rules: [
+      ...webpackConfig.module.rules,
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader', 'autoprefixer-loader'],
+        }),
+        exclude: /node_modules/,
+      },
+    ],
   },
-
   plugins: [
     ...webpackConfig.plugins,
-
     new ExtractTextPlugin('styles-[hash].css'),
-
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -50,16 +44,14 @@ export default {
         comments: false,
       },
     }),
-
     new StatsWriterPlugin({
-      transform: data => JSON.stringify({
-        main: data.assetsByChunkName.main[0],
-        styles: data.assetsByChunkName.main[1],
-      }),
+      transform: data =>
+        JSON.stringify({
+          main: data.assetsByChunkName.main[0],
+          styles: data.assetsByChunkName.main[1],
+        }),
     }),
-
   ],
-
   stats: {
     colors: true,
     reasons: false,
@@ -71,5 +63,4 @@ export default {
     cached: false,
     cachedAssets: false,
   },
-
 }

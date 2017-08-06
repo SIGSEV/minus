@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 
 import routes from 'routes'
 
-export default (store, Router, routerProps) => (
+export default (store, Router, routerProps) =>
   <Provider store={store}>
     <Router {...routerProps}>
       <Switch>
@@ -12,4 +12,3 @@ export default (store, Router, routerProps) => (
       </Switch>
     </Router>
   </Provider>
-)
