@@ -12,7 +12,7 @@ const stats = (config.env === 'production')
   : {}
 
 if (config.env === 'development') {
-  require('./webpack').default(server)
+  require('./webpack')(server)
 }
 
 if (config.env === 'production') {
