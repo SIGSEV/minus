@@ -4,11 +4,10 @@ import { Provider } from 'react-redux'
 
 import routes from 'routes'
 
-export default (store, Router, routerProps) =>
+export default (store, Router, routerProps) => (
   <Provider store={store}>
     <Router {...routerProps}>
-      <Switch>
-        {routes.map(route => <Route key={route.path} {...route} />)}
-      </Switch>
+      <Switch>{routes.map(route => <Route key={route.path} {...route} />)}</Switch>
     </Router>
   </Provider>
+)

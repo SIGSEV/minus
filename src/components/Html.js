@@ -1,12 +1,10 @@
 import React from 'react'
 import serialize from 'serialize-javascript'
 
-const Html = ({ content, state, stats: { styles, main = 'bundle.js' } }) =>
+const Html = ({ content, state, stats: { styles, main = 'bundle.js' } }) => (
   <html>
     <head>
-      <title>
-        {'[::]'}
-      </title>
+      <title>{'[::]'}</title>
 
       <meta charSet="utf-8" />
       <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
@@ -22,5 +20,6 @@ const Html = ({ content, state, stats: { styles, main = 'bundle.js' } }) =>
       <script src={`/dist/${main}`} />
     </body>
   </html>
+)
 
 export default Html
