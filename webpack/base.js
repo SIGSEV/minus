@@ -1,6 +1,8 @@
 import webpack from 'webpack'
 import path from 'path'
 
+import * as globals from 'globals'
+
 export default {
   entry: ['babel-polyfill', './src/client'],
   resolve: {
@@ -22,10 +24,11 @@ export default {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-        __BROWSER__: JSON.stringify(true),
-      },
+      ...Object.keys(globals).reduce((acc, key) => {
+        acc[key] = JSON.stringify(globals[key])
+        return acc
+      }, {}),
+      __BROWSER__: JSON.stringify(true),
     }),
   ],
 }

@@ -15,9 +15,7 @@ const store = createStore(history, window.__INITIAL_STATE__)
 
 const render = Component => {
   hydrate(
-    <AppContainer>
-      {Component(store, ConnectedRouter, { history })}
-    </AppContainer>,
+    <AppContainer>{Component(store, ConnectedRouter, { history })}</AppContainer>,
     document.getElementById('root'),
   )
 }

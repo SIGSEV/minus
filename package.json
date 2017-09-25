@@ -4,9 +4,9 @@
   "scripts": {
     "start": "node -r babel-register -r babel-polyfill -r ignore-styles src/server",
     "lint": "eslint src webpack bin",
-    "prettier": "prettier --print-width 100 --single-quote --trailing-comma all --no-semi --write \"{src,webpack}/**/*.?(js|?(s)css|json)\"",
+    "prettier": "prettier --write \"{src,webpack}/**/*.?(js|?(s)css|json)\"",
     "build": "rm -rf dist && NODE_ENV=production webpack --progress --hide-modules --config webpack/build.babel.js",
-    "prod": "NODE_ENV=production npm start"
+    "prod": "NODE_ENV=production yarn start"
   },
   "dependencies": {
     "compression": "^1.6.2",
