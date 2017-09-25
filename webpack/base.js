@@ -29,6 +29,7 @@ export default {
         return acc
       }, {}),
       __BROWSER__: JSON.stringify(true),
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     }),
   ],
 }
