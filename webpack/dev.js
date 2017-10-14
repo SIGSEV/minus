@@ -11,7 +11,7 @@ export default {
       ...webpackConfig.module.rules,
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader', 'autoprefixer-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
         exclude: /node_modules/,
       },
     ],
