@@ -11,20 +11,7 @@ export default {
       ...webpackConfig.module.rules,
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                require('autoprefixer')()
-              ]
-            }
-          },
-          'sass-loader'
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
         exclude: /node_modules/,
       },
     ],

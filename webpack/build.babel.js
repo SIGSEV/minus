@@ -23,12 +23,10 @@ export default {
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
-                plugins: () => [
-                  require('autoprefixer')()
-                ]
-              }
+                plugins: () => [require('autoprefixer')()],
+              },
             },
-            'sass-loader'
+            'sass-loader',
           ],
         }),
         exclude: /node_modules/,
