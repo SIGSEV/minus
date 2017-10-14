@@ -18,7 +18,7 @@ export default {
             loader: 'postcss-loader',
             options: {
               ident: 'postcss',
-              plugins: (loader) => [
+              plugins: () => [
                 require('autoprefixer')()
               ]
             }
