@@ -17,7 +17,19 @@ export default {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader', 'autoprefixer-loader'],
+          use: [
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: () => [
+                  require('autoprefixer')()
+                ]
+              }
+            },
+            'sass-loader'
+          ],
         }),
         exclude: /node_modules/,
       },
