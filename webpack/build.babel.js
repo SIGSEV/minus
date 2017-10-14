@@ -1,6 +1,5 @@
 import webpack from 'webpack'
 import { StatsWriterPlugin } from 'webpack-stats-plugin'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 import webpackConfig from './base'
 
@@ -10,32 +9,8 @@ export default {
     ...webpackConfig.output,
     filename: 'bundle-[hash].js',
   },
-  module: {
-    rules: [
-      ...webpackConfig.module.rules,
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                ident: 'postcss',
-                plugins: () => [require('autoprefixer')()],
-              },
-            },
-            'sass-loader',
-          ],
-        }),
-        exclude: /node_modules/,
-      },
-    ],
-  },
   plugins: [
     ...webpackConfig.plugins,
-    new ExtractTextPlugin('styles-[hash].css'),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -55,11 +30,7 @@ export default {
       },
     }),
     new StatsWriterPlugin({
-      transform: data =>
-        JSON.stringify({
-          main: data.assetsByChunkName.main[0],
-          styles: data.assetsByChunkName.main[1],
-        }),
+      transform: data => JSON.stringify({ main: data.assetsByChunkName.main }),
     }),
   ],
   stats: {
