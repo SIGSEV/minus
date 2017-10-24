@@ -8,8 +8,6 @@ import createStore from 'store'
 
 import App from 'components/App'
 
-import 'styles/main.scss'
-
 const history = createHistory()
 const store = createStore(history, window.__INITIAL_STATE__)
 
