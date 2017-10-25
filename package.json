@@ -1,6 +1,4 @@
 {
-  "name": "",
-  "version": "0.0.0",
   "scripts": {
     "start": "node -r babel-register -r babel-polyfill src/server",
     "lint": "eslint src webpack bin",
