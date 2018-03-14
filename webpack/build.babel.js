@@ -5,6 +5,7 @@ import webpackConfig from './base'
 
 export default {
   ...webpackConfig,
+  mode: 'production',
   output: {
     ...webpackConfig.output,
     filename: 'bundle-[hash].js',
@@ -12,27 +13,13 @@ export default {
   plugins: [
     ...webpackConfig.plugins,
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        screw_ie8: true, // eslint-disable-line
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true, // eslint-disable-line
-        evaluate: true,
-        if_return: true, // eslint-disable-line
-        join_vars: true, // eslint-disable-line
-      },
-      output: {
-        comments: false,
-      },
-    }),
     new StatsWriterPlugin({
       transform: data => JSON.stringify({ main: data.assetsByChunkName.main }),
     }),
   ],
+  optimization: {
+    noEmitOnErrors: true,
+  },
   stats: {
     colors: true,
     reasons: false,
