@@ -6,16 +6,13 @@ import reducer from 'reducers'
 
 export default (history, initialState) => {
   const devTools = __BROWSER__ && window.devToolsExtension ? window.devToolsExtension() : f => f
-
   const middlewares = [routerMiddleware(history), thunk]
-
   const enhancers = compose(applyMiddleware(...middlewares), devTools)
-
   const store = createStore(reducer, initialState, enhancers)
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {
-      const nextRootReducer = require('./reducers').default
+      const nextRootReducer = require('./reducers')
       store.replaceReducer(nextRootReducer)
     })
   }
