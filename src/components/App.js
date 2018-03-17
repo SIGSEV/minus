@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 
 import routes from 'routes'
 
+import 'styles/global'
+
 const App = ({ store, Router, routerProps }) => (
   <Provider store={store}>
     <Router {...routerProps}>

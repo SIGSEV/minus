@@ -6,4 +6,7 @@
     "__DEV__": false,
     "__PROD__": false,
   },
+  "rules": {
+    "no-unused-expressions": 0,
+  }
 }

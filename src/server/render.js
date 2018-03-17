@@ -1,3 +1,4 @@
+import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { ServerStyleSheet } from 'styled-components'
 import { StaticRouter } from 'react-router'
@@ -27,7 +28,8 @@ export default stats => async (req, res) => {
 
     await Promise.all(promises)
 
-    const root = App(store, StaticRouter, { location: req.url, context })
+    const routerProps = { location: req.url, context }
+    const root = <App store={store} Router={StaticRouter} routerProps={routerProps} />
     const html = __DEV__ ? '' : renderToString(sheet.collectStyles(root))
     const styles = __DEV__ ? '' : sheet.getStyleTags()
 

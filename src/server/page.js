@@ -12,17 +12,6 @@ export default ({ styles, state, html, main }) => `<!doctype html>
 
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
 
-    <style>
-      *, *:after, *:before {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font: inherit;
-        color: inherit;
-        border: none;
-        background: transparent;
-      }
-    </style>
     ${styles}
     <script>
       window.__INITIAL_STATE__ = ${serialize(state)}
