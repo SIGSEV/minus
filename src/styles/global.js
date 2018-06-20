@@ -7,5 +7,7 @@ injectGlobal`
     padding: 0;
     font: inherit;
     color: inherit;
+    border: none;
+    outline: none;
   }
 `
