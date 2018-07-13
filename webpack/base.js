@@ -22,6 +22,9 @@ export default {
       },
     ],
   },
+  performance: {
+    hints: false,
+  },
   plugins: [
     new webpack.DefinePlugin({
       ...Object.keys(globals).reduce((acc, key) => {
