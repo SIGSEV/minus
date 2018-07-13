@@ -28,5 +28,5 @@ server.use('/assets', express.static(ASSETS_FOLDER))
 server.use(render(stats))
 
 server.listen(port, 'localhost', () => {
-  console.log(`[server] listening on port ${port} - ${__ENV__}`) // eslint-disable-line no-console
+  console.log(`[server] http://localhost:${port} - ${__ENV__}`) // eslint-disable-line no-console
 })
