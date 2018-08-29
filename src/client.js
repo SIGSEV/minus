@@ -3,6 +3,8 @@ import { hydrate, render } from 'react-dom'
 import { ConnectedRouter } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 
+import 'styles/global'
+
 import createStore from 'store'
 
 import App from 'components/App'

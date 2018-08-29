@@ -1,19 +1,8 @@
 {
-  "presets": [
-    [
-      "env", {
-        "targets": {
-          "browsers": ["last 2 versions"],
-          "node": "current",
-        },
-      },
-    ],
-    "react",
-    "stage-0",
-  ],
+  "presets": ["@babel/env", "@babel/preset-react"],
   "plugins": [
-    "add-module-exports",
-    "transform-decorators-legacy",
     ["module-resolver", { "root": ["src"] }],
+    "@babel/plugin-proposal-class-properties",
+    "react-hot-loader/babel",
   ],
 }
