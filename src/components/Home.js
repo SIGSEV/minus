@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -8,7 +8,7 @@ const Container = styled.div`
   justify-content: center;
 `
 
-class Home extends Component {
+class Home extends PureComponent {
   render() {
     return <Container>{'[::]'}</Container>
   }

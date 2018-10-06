@@ -4,7 +4,7 @@ import path from 'path'
 import * as globals from 'globals'
 
 export default {
-  entry: ['babel-polyfill', './src/client'],
+  entry: ['@babel/polyfill', './src/client'],
   resolve: {
     modules: ['../src', '../node_modules'].map(p => path.resolve(__dirname, p)),
   },

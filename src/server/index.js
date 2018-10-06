@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000
 const stats = __PROD__ ? require(path.join(DIST_FOLDER, 'stats.json')) : {}
 
 if (__DEV__) {
-  require('./webpack')(server)
+  require('./webpack').default(server)
 }
 
 if (__PROD__) {
