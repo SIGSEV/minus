@@ -15,7 +15,6 @@
 - **100%** isomorphic — page is rendered server side for initial load
 - Use [React](https://github.com/facebook/react), [Redux](https://github.com/rackt/redux), [react-router](https://github.com/rackt/react-router)
 - Fully linted, with large amount of [eslint](https://github.com/eslint/eslint) rules
-- Sass support
 - Happy developer experience:
   - Client hot reloading for **components**, **styles**, **actions** and **reducers**
   - Out-of-the-box support of [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension)
@@ -25,15 +24,15 @@
 
 Launch the dev environment:
 
-    npm start
+    yarn start
 
 Launch the build:
 
-    npm run build
+    yarn build
 
 Launch the app in prod mode:
 
-    npm run prod
+    yarn prod
 
 If you want to see more commands, just read the fucking `package.json`.
 
