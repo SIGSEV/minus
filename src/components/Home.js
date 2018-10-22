@@ -1,17 +1,5 @@
-import React, { PureComponent } from 'react'
-import styled from 'styled-components'
+import React from 'react'
 
-const Container = styled.div`
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
-class Home extends PureComponent {
-  render() {
-    return <Container>{'[::]'}</Container>
-  }
+export default function Home() {
+  return <div>{'[::]'}</div>
 }
-
-export default Home

@@ -2,18 +2,18 @@ import express from 'express'
 import compression from 'compression'
 import path from 'path'
 
-import render from 'server/render'
-import * as globals from 'globals'
+import render from './render'
+import * as globals from '../globals'
 
 Object.keys(globals).forEach(key => (global[key] = globals[key]))
 
-const ASSETS_FOLDER = path.join(__dirname, '../assets')
-const DIST_FOLDER = path.join(__dirname, '../../dist')
+const ASSETS_FOLDER = path.resolve(__dirname, '../assets')
+const DIST_FOLDER = path.resolve(__dirname, '../../dist')
+const STATS_FILE = path.resolve(DIST_FOLDER, 'stats.json')
 
 const server = express()
 const port = process.env.PORT || 3000
-
-const stats = __PROD__ ? require(path.join(DIST_FOLDER, 'stats.json')) : {}
+const stats = __PROD__ ? require(STATS_FILE) : {}
 
 if (__DEV__) {
   require('./webpack').default(server)

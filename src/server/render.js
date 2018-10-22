@@ -1,19 +1,17 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import { ServerStyleSheet } from 'styled-components'
 import { StaticRouter } from 'react-router'
 import { matchPath } from 'react-router-dom'
 
-import routes from 'routes'
-import createStore from 'store'
-import page from 'server/page'
+import routes from '../routes'
+import createStore from '../store'
+import page from './page'
 
-import App from 'components/App'
+import App from '../components/App'
 
 export default stats => async (req, res) => {
   try {
     const store = createStore()
-    const sheet = new ServerStyleSheet()
 
     const context = {}
     const promises = []
@@ -30,10 +28,9 @@ export default stats => async (req, res) => {
 
     const routerProps = { location: req.url, context }
     const root = <App store={store} Router={StaticRouter} routerProps={routerProps} />
-    const html = __DEV__ ? '' : renderToString(sheet.collectStyles(root))
-    const styles = __DEV__ ? '' : sheet.getStyleTags()
+    const html = __DEV__ ? '' : renderToString(root)
 
-    res.end(page({ styles, html, state: store.getState(), main: stats.main || 'bundle.js' }))
+    res.end(page({ html, state: store.getState(), main: stats.main || 'bundle.js' }))
   } catch (err) {
     res.status(500).send(err.stack)
   }

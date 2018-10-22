@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
 
-import * as globals from 'globals'
+import * as globals from '../src/globals'
 
 export default {
   entry: ['@babel/polyfill', './src/client'],

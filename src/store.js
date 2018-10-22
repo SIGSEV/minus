@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 
-import reducer from 'reducers'
+import reducer from './reducers'
 
 export default (history, initialState) => {
   const devTools = __BROWSER__ && window.devToolsExtension ? window.devToolsExtension() : f => f

@@ -1,12 +1,28 @@
 {
-  "extends": ["zavatta", "zavatta-react", "prettier", "prettier/react"],
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react",
+  ],
+  "plugins": [
+    "react",
+  ],
+  "settings": {
+    "react": {
+      "version": "^16.5.2",
+    },
+  },
   "globals": {
     "__BROWSER__": false,
     "__ENV__": false,
     "__DEV__": false,
     "__PROD__": false,
   },
-  "rules": {
-    "no-unused-expressions": 0,
-  }
 }

@@ -1,9 +1,3 @@
-import Home from 'components/Home'
+import Home from './components/Home'
 
-export default [
-  {
-    path: '/',
-    exact: true,
-    component: Home,
-  },
-]
+export default [{ path: '/', exact: true, component: Home }]

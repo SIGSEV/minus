@@ -1,6 +1,6 @@
 import serialize from 'serialize-javascript'
 
-export default ({ styles, state, html, main }) => `<!doctype html>
+export default ({ state, html, main }) => `<!doctype html>
 <html lang="en">
   <head>
     <title>[::]</title>
@@ -8,7 +8,6 @@ export default ({ styles, state, html, main }) => `<!doctype html>
     <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-    ${styles}
     <script>
       window.__INITIAL_STATE__ = ${serialize(state)}
     </script>
